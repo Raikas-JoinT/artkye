@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title>Artkye</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,19 +10,23 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="header__bar row">
-        <h1 class="title"><a href="/">artkey</a></h1>
-        <div class="kyeword_form">
-          <a class="post" href="/tweets/new">取得する</a>
+    <header>
+      <div class="header-wrapper">
+        <div class="site-title">
+          <h1><a href="/"><span>artkey<span></a></h1>
         </div>
       </div>
     </header>
+
     <%= yield %>
+
     <footer>
-      <p>
-        Copyright artkey 2020.
-      </p>
+      <div class="footer-wrapper">
+        <div class="site-year">
+          Copyright artkey 2020.
+        </div>
+      </div>
     </footer>
   </body>
+
 </html>

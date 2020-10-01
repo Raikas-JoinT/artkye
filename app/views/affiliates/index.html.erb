@@ -1,7 +1,23 @@
-<div class="contents row">
-  <% @affiliates.each do |affiliate| %>
-    <div class="content_post">
-      <p><%= affiliate.text %></p>
+<main>
+  <div class="main-wrapper">
+    <div class="container">
+      <div class="get-box">
+        <h2><span>キーワード情報を取得する</span></h2>
+          <%= form_with url: "#", method: ":post", local: true do |form| %>
+            <%= form.text_field :keyword, placeholder: "キーワードを入力する", class: "keyword-write" %>
+            <%= form.submit "取得", class: "keyword-input" %>
+          <% end %>
+      </div>
+      <div class="auto-box">
+        <h2><span>キーワード情報を自動取得する</span></h2>
+        <%= form_with url: "#", method: ":post", local: true do |form| %>
+          <%= form.text_field :keyword, placeholder: "キーワードを入力する", class: "keyword-write" %>
+          <%= form.submit "取得", class: "keyword-input" %>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-</div>
+  </div>
+</main>
+
+<canvas class="background"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>

@@ -1,2 +1,163 @@
-@charset "UTF-8";
+/* -------------ここからリセットCSS------------- */
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* -------------ここまでリセットCSS------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://krwsjapan.conohawing.com/wp-content/uploads/2020/10/spaceworld-scaled.jpg");
+  background-size: 100% 100%;
+}
+
+.background {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+header {
+  width: 100vw;
+  height: 100px;
+  position: relative;
+}
+
+.site-title {
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #000;
+}
+
+h1 span {
+  background-image: -webkit-linear-gradient(315deg, #b8751e 0%, #ffce08 37%, #fefeb2 47%, #fafad6 50%, #fefeb2 53%, #e1ce08 63%, #b8751e 100%);
+  background-image: linear-gradient(135deg, #b8751e 0%, #ffce08 37%, #fefeb2 47%, #fafad6 50%, #fefeb2 53%, #e1ce08 63%, #b8751e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100vw;
+  height: calc(100vh - 100px - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  background-image: -webkit-linear-gradient(315deg, #b8751e 0%, #ffce08 37%, #fefeb2 47%, #fafad6 50%, #fefeb2 53%, #e1ce08 63%, #b8751e 100%);
+  background-image: linear-gradient(135deg, #b8751e 0%, #ffce08 37%, #fefeb2 47%, #fafad6 50%, #fefeb2 53%, #e1ce08 63%, #b8751e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.get-box {
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
+}
+
+.auto-box {
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+  background: linear-gradient(135deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
+}
+
+.keyword-write {
+  margin-top: 20px;
+  width: 300px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.keyword-input {
+  height: 40px;
+  border-radius: 8px;
+}
+
+.keyword-write, .keyword-input:focus {
+  outline: 0;
+}
+
+footer {
+  width: 100vw;
+  height: 100px;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.site-year {
+  font-family: 'Merienda', cursive;
+  color:white;
+  position: absolute;
+  bottom: 0;
+}
