@@ -1,16 +1,21 @@
 <header>
   <div class="header-wrapper">
     <div class="site-title">
-      <h1><a href="/"><span>artkey<span></a></h1>
+      <h1><a href="/">artkey</a></h1>
+    </div>
+    <div class="h1-p">
+      キーワード情報取得ツール
+    <div>
+    <div class="user-infomation">
       <% if user_signed_in? %>
-        <div class="user_nav grid-6">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          <%= link_to "投稿する", new_tweet_path, class: "post" %>
+        <div class="grid-6">
+          <%= link_to "#{current_user.nickname}さん", root_path, class: "user-nickname" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
         </div>
       <% else %>
         <div class="grid-6">
-          <%= link_to "ログイン", new_user_session_path, class: "post" %>
-          <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+          <%= link_to "ログイン", new_user_session_path, class: "login" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "sign-up" %>
         </div>
       <% end %>
     </div>

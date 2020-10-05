@@ -49,7 +49,7 @@ table {
 @import url('https://fonts.googleapis.com/css?family=Merienda');
 
 body {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-image: url("https://krwsjapan.conohawing.com/wp-content/uploads/2020/10/spaceworld-scaled.jpg");
   background-size: 100% 100%;
@@ -64,37 +64,90 @@ body {
 }
 
 header {
-  width: 100vw;
-  height: 100px;
+  width: 100%;
+  height: 110px;
   position: relative;
+  z-index: 1;
 }
 
 .site-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: column;
+}
+
+.h1-p {
+  color: white;
+  padding-top: 10px;
   text-align: center;
+}
+
+.grid-6 {
+  float: right;
+}
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.user-nickname:hover {
+  opacity: 0.7;
+}
+
+.logout {
+  text-decoration: none;
+  color:white;
+}
+
+.logout:hover {
+  opacity: 0.7;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: white;
+}
+
+.login:hover {
+  opacity: 0.7;
+}
+
+.sign-up {
+  text-decoration: none;
+  color:white;
+}
+
+.sign-up:hover {
+  opacity: 0.7;
 }
 
 h1 {
   font-size: 60px;
   font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
-  padding: 1rem 2rem;
-  color: #fff;
-  background: #000;
-}
-
-h1 span {
-  background-image: -webkit-linear-gradient(315deg, #b8751e 0%, #ffce08 37%, #fefeb2 47%, #fafad6 50%, #fefeb2 53%, #e1ce08 63%, #b8751e 100%);
-  background-image: linear-gradient(135deg, #b8751e 0%, #ffce08 37%, #fefeb2 47%, #fafad6 50%, #fefeb2 53%, #e1ce08 63%, #b8751e 100%);
+  color: #b8751e;
+  background: -webkit-linear-gradient(315deg, #b8751e 0%, #ffce08 37%, #fefeb2 47%, #fafad6 50%, #fefeb2 53%, #e1ce08 63%, #b8751e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-h1 a {
+.post {
   text-decoration: none;
+  color: white;
+}
+
+main {
 }
 
 .container {
-  width: 100vw;
-  height: calc(100vh - 100px - 100px);
+  width: 100%;
+  height: calc(100vh - 110px - 100px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,8 +158,8 @@ h2 {
   font-size: 20px;
   font-weight: 900;
   font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
-  background-image: -webkit-linear-gradient(315deg, #b8751e 0%, #ffce08 37%, #fefeb2 47%, #fafad6 50%, #fefeb2 53%, #e1ce08 63%, #b8751e 100%);
-  background-image: linear-gradient(135deg, #b8751e 0%, #ffce08 37%, #fefeb2 47%, #fafad6 50%, #fefeb2 53%, #e1ce08 63%, #b8751e 100%);
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -114,8 +167,7 @@ h2 {
 .get-box {
   border-radius: 5px;
   padding: 20px;
-  text-align: center;
-  z-index: 1;
+  z-index: 2;
   margin-bottom: 50px;
   background: linear-gradient(135deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
 }
@@ -123,8 +175,7 @@ h2 {
 .auto-box {
   border-radius: 5px;
   padding: 20px;
-  text-align: center;
-  z-index: 1;
+  z-index: 2;
   background: linear-gradient(135deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
 }
 
@@ -145,7 +196,7 @@ h2 {
 }
 
 footer {
-  width: 100vw;
+  width: 100%;
   height: 100px;
 }
 
