@@ -87,6 +87,11 @@ header {
   float: right;
 }
 
+.user-nickname, .logout, .login, .sign-up {
+  padding: 8px 20px;
+  border: 1px solid white;
+}
+
 .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
