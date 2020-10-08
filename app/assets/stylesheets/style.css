@@ -218,8 +218,35 @@ footer {
   bottom: 0;
 }
 
-.show-wrapper {
-  width: 100%;
-  height: 100vh;
-  background-color: white;
+
+/* -------------showページ------------- */
+
+.top-wrapper {
+  display: flex;
 }
+
+.top-left {
+  width: 50%;
+  height:;
+}
+
+.top-right {
+  width: 50%;
+  height:;
+}
+
+.bottom-wrapper {
+  display: flex;
+}
+
+.bottom-left {
+  width:;
+  height:;
+}
+
+.bottom-right {
+  width:;
+  height:;
+}
+
+/* -------------showページ------------- */

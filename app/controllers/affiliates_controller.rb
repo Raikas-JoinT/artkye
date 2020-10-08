@@ -4,7 +4,7 @@ class AffiliatesController < ApplicationController
   end
 
   def show
-    @affiliate = Affiliate.keyword_word_count(params)
+    @affiliate = Affiliate.new
   end
 
   def create

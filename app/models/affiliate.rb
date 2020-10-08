@@ -1,23 +1,23 @@
 class Affiliate < ApplicationRecord
 
-  def self.keyword_info(params)
-    affiliate = Affiliate.find(params[:id])
-    affiliate = affiliate.keyword
-    driver = Selenium::WebDriver.for :chrome
+  # def self.keyword_info(params)
+  #   affiliate = Affiliate.find(params[:id])
+  #   affiliate = affiliate.keyword
+  #   d = Selenium::WebDriver.for :chrome
 
-    driver.navigate.to "https://www.google.co.jp/"
-    inputElement = driver.find_element(:name, 'q')
-    inputElement.send_keys affiliate
-    inputElement.submit
+  #   d.navigate.to "https://www.google.co.jp/"
+  #   inputElement = d.find_element(:name, 'q')
+  #   inputElement.send_keys affiliate
+  #   inputElement.submit
 
-    search = driver.find_element(:css, "div.rc a")
-    search.click
+  #   search = d.find_element(:css, "div.rc a")
+  #   search.click
 
-    content = driver.find_element(:css, "body")
+  #   content = d.find_element(:tag_name, "body")
 
-    affiliate_info = content.text.length
-    driver.quit
-    return affiliate_info
-  end
+  #   affiliate_info = content.text.length
+  #   d.quit
+  #   return affiliate_info
+  # end
 
 end
