@@ -87,6 +87,11 @@ header {
   float: right;
 }
 
+.user-nickname, .logout, .login, .sign-up {
+  padding: 8px 20px;
+  border: 1px solid white;
+}
+
 .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
@@ -212,3 +217,36 @@ footer {
   position: absolute;
   bottom: 0;
 }
+
+
+/* -------------showページ------------- */
+
+.top-wrapper {
+  display: flex;
+}
+
+.top-left {
+  width: 50%;
+  height:;
+}
+
+.top-right {
+  width: 50%;
+  height:;
+}
+
+.bottom-wrapper {
+  display: flex;
+}
+
+.bottom-left {
+  width:;
+  height:;
+}
+
+.bottom-right {
+  width:;
+  height:;
+}
+
+/* -------------showページ------------- */

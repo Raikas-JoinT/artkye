@@ -4,12 +4,14 @@ class AffiliatesController < ApplicationController
   end
 
   def show
+    @affiliate = Affiliate.new
   end
 
   def create
-    @affiliate = Affiliate.new(affiliate_params)
-    @affiliate.save
-      redirect_to affiliates_path
+    @affiliate = Affiliate.create(affiliate_params)
+    if @affiliate.save
+      redirect_to affiliate_path(@affiliate)
+    end
   end
 
   private
