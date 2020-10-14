@@ -10,12 +10,20 @@
       <div class="scraping-info">
         <div class="scraping-info-top">
           <div class="scraping-info-title">
-            <h2>文字数</h2>
+            <h2>ソース元</h2>
           </div>
         </div>
         <div class="scraping-info-bottom">
           <div class="scraping-info-bottom-flame">
-            <h3><%= "#{@affiliate}文字です" %></h3>
+            <h3>
+              <ol class="site-title-lists">
+                <li class="list">
+                  <% @affiliate_titles.zip(@affiliate_links).each do |title, link| %>
+                    <%= link_to "#{title}", "#{link}" %>
+                  <% end %>
+                </li>
+              </ol>
+            </h3>
           </div>
         </div>
       </div>
@@ -25,12 +33,20 @@
       <div class="scraping-info">
         <div class="scraping-info-top">
           <div class="scraping-info-title">
-            <h2>タイトル + 見出し</h2>
+            <h2>見出し</h2>
           </div>
         </div>
         <div class="scraping-info-bottom">
           <div class="scraping-info-bottom-flame">
-            <h3><%= "テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト" %></h3>
+            <h3>
+              <%# <ul class="article-tags-lists"> %>
+                <%# <% @affiliate_article_tags.each do |tag|%>
+                  <%# <li class="list"> %>
+                    <%# <%= tag %>
+                  <%# </li> %>
+                <%# <% end %>
+              <%# </ul> %>
+            </h3>
           </div>
         </div>
       </div>
@@ -42,12 +58,14 @@
       <div class="scraping-info">
         <div class="scraping-info-top">
           <div class="scraping-info-title">
-            <h2>ソース元</h2>
+            <h2>文字数</h2>
           </div>
         </div>
         <div class="scraping-info-bottom">
           <div class="scraping-info-bottom-flame">
-            <h3><%= "テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト" %></h3>
+            <h3>
+            <%# <%= "#{@affiliate_site_word_counts}文字です" %>
+            </h3>
           </div>
         </div>
       </div>
@@ -57,12 +75,18 @@
       <div class="scraping-info">
         <div class="scraping-info-top">
           <div class="scraping-info-title">
-            <h2>リンク</h2>
+            <h2>投稿日</h2>
           </div>
         </div>
         <div class="scraping-info-bottom">
           <div class="scraping-info-bottom-flame">
-            <h3 ><%= "テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト" %></h3>
+            <ol class="site-title-lists">
+              <li class="list">
+                <% @affiliate_times.each do |time| %>
+                  <%= time %>
+                <% end %>
+              </li>
+            </ol>
           </div>
         </div>
       </div>
