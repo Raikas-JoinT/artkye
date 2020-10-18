@@ -58,3 +58,5 @@ gem 'devise'
 
 gem 'selenium-webdriver'
 gem 'nokogiri'
+gem 'google-api-client'
+gem 'jquery-rails'
