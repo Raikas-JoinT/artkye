@@ -344,6 +344,7 @@ h2 {
 
 .site-titles:hover {
   opacity: 0.7;
+  color: red;
 }
 
 /* -------------showページ------------- */

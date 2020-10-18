@@ -7,8 +7,10 @@ class AffiliatesController < ApplicationController
     @affiliate_sites = Affiliate.affiliate_sites(params)
     @affiliate_titles = @affiliate_sites.map {|affiliate_site| affiliate_site[:title]}
     @affiliate_links = @affiliate_sites.map {|affiliate_site| affiliate_site[:link]}
-    @affiliate_times = @affiliate_sites.map {|affiliate_site| affiliate_site[:time]}
-    binding.pry
+    @affiliate_published_times = @affiliate_sites.map {|affiliate_site| affiliate_site[:published_time]}
+    @affiliate_modified_times = @affiliate_sites.map {|affiliate_site| affiliate_site[:modified_time]}
+    @affiliate_article_tag = Affiliate.article_tag(params)
+    @affiliate_article_word_counts = Affiliate.article_word_counts(params)
     # @affiliate_site_info = Affiliate.site_info(params)
     # @affiliate_site_urls = Affiliate.site_urls(params)
     # @affiliate_site_titles = Affiliate.site_titles(params)

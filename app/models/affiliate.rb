@@ -1,6 +1,8 @@
 class Affiliate < ApplicationRecord
 require 'google/apis/customsearch_v1'
 require 'json'
+require 'nokogiri'
+require 'open-uri'
 
 API_KEY = 'AIzaSyCvOsevHhyU8mwtISxXHJDK8HHtox7p7u0'
 CSE_ID = '5a2935ef5c576e6b6'
@@ -11,10 +13,39 @@ def self.affiliate_sites(params)
   keyword = Affiliate.find(params[:id]).keyword
   results = searcher.list_cses(q: keyword, cx: CSE_ID)
   items = results.items
-  affiliate_sites = items.map {|item| { title: item.title, link: item.link, time: item.pagemap["metatags"].map{|time| time["article:modified_time"]}} }
+  affiliate_sites = items.map {|item| { title: item.title, link: item.link, published_time: item.pagemap["metatags"].map{|published_time| published_time["article:published_time"]}, modified_time: item.pagemap["metatags"].map{|modified_time| modified_time["article:modified_time"]}} }
   return affiliate_sites
 end
-  # pp items.map {|item| { title: item.title, link: item.link} }
+
+def self.article_tag(params)
+  sq = method(:affiliate_sites)
+  items = sq.call(params)
+
+  urls = items.map {|affiliate_site| affiliate_site[:link]}
+  url = urls[0]
+  doc = Nokogiri::HTML(open(url))
+  doc.css('h2').each do |link|
+    article_tag = link.content
+  end
+end
+
+def self.article_word_counts(params)
+  sq = method(:affiliate_sites)
+  items = sq.call(params)
+
+  urls = items.map {|affiliate_site| affiliate_site[:link]}
+  url = urls[0]
+  doc = Nokogiri::HTML(open(url))
+
+  word_counts = []
+
+  doc.css('p').each do |content|
+    word_counts << content.text.length
+  end
+  article_word_counts = word_counts.sum
+
+end
+
 
   # def self.site_urls(params)
   #   affiliate = Affiliate.find(params[:id])
