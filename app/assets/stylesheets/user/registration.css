@@ -73,3 +73,36 @@
   background-color:#ea352d;
   cursor:pointer
 }
+
+.login-user-link {
+  margin-top: 10px;
+}
+
+.login-user{
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+  color: white;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.login-user::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+.login-user:hover::after{
+  width: 100%;
+}
+
+.login-user:hover {
+  opacity: 1;
+}
