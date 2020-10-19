@@ -81,12 +81,15 @@ header {
 }
 
 .h1-p {
+  font-size: 2vmin;
   color: white;
-  padding-top: 10px;
+  padding-top: 1vmin;
   text-align: center;
 }
 
-.grid-6 {
+/* -------------ログインボタン------------- */
+
+/* .grid-6 {
   float: right;
 }
 
@@ -98,7 +101,7 @@ header {
 .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
-  color: red;
+  color: #00FF99;
   font-weight: bold;
   font-size: 18px;
 }
@@ -134,10 +137,110 @@ header {
 
 .sign-up:hover {
   opacity: 0.7;
+} */
+
+.grid-6 {
+  font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
+  float: right;
 }
 
-h1 {
-  font-size: 60px;
+.btn-box1 {
+  font-size: 2vmin;
+  color: #00FF99;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  border: 0.3vmin solid #00FF99;
+  transition: .4s;
+  padding: 1vmin 2vmin;
+  margin-right: 1vmin;
+}
+
+.btn-box1:hover {
+  border: 2px solid transparent;
+  color: #FFF;
+}
+
+.btn-box1:before, .btn-box1:after {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  transform: scale(0);
+  transition: .2s;
+}
+
+.btn-box1:before {
+  border-bottom: 0.3vmin solid #FFF;
+  border-left: 0.3vmin solid #FFF;
+  transform-origin: 100% 0%;
+}
+
+.btn-box1:after {
+  border-top: 0.3vmin solid #FFF;
+  border-right: 0.3vmin solid #FFF;
+  transform-origin: 0% 100%;
+}
+
+.btn-box1:hover:after,
+.btn-box1:hover:before {
+  transform: scale(1);
+}
+
+.btn-box2 {
+  font-size: 2vmin;
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  border: 0.3vmin solid red;
+  transition: .4s;
+  padding: 1vmin 2vmin;
+}
+
+.btn-box2:hover {
+  border: 0.3vmin solid transparent;
+  color: #FFF;
+}
+
+.btn-box2:before, .btn-box2:after {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  transform: scale(0);
+  transition: .2s;
+}
+
+.btn-box2:before {
+  border-bottom: 0.3vmin solid #FFF;
+  border-left: 0.3vmin solid #FFF;
+  transform-origin: 100% 0%;
+}
+
+.btn-box2:after {
+  border-top: 0.3vmin solid #FFF;
+  border-right: 0.3vmin solid #FFF;
+  transform-origin: 0% 100%;
+}
+
+.btn-box2:hover:after,
+.btn-box2:hover:before {
+  transform: scale(1);
+}
+
+/* -------------ログインボタン------------- */
+
+.site-title h1 {
+  font-size: 10vmin;
   font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
   color: #b8751e;
   background: -webkit-linear-gradient(315deg, #b8751e 0%, #ffce08 37%, #fefeb2 47%, #fafad6 50%, #fefeb2 53%, #e1ce08 63%, #b8751e 100%);
@@ -162,8 +265,8 @@ main {
   flex-direction: column;
 }
 
-h2 {
-  font-size: 20px;
+.container h2 {
+  font-size: 3vmin;
   font-weight: 900;
   font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
   color: #DA8E00;
@@ -174,28 +277,29 @@ h2 {
 
 .get-box {
   border-radius: 5px;
-  padding: 20px;
+  padding: 2vmin;
   z-index: 2;
-  margin-bottom: 50px;
+  margin-bottom: 5vmin;
   background: linear-gradient(135deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
 }
 
 .auto-box {
   border-radius: 5px;
-  padding: 20px;
+  padding: 2vmin;
   z-index: 2;
   background: linear-gradient(135deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
 }
 
 .keyword-write {
-  margin-top: 20px;
-  width: 300px;
-  height: 40px;
+  margin-top: 1vmin;
+  width: 40vmin;
+  height: 5vmin;
   border-radius: 8px;
 }
 
 .keyword-input {
-  height: 40px;
+  font-size: 2vmin;
+  height: 5vmin;
   border-radius: 8px;
 }
 
@@ -214,7 +318,7 @@ h2 {
   /* font-family: 'Merienda', cursive; */
   position: absolute;
   bottom: 0;
-  padding-bottom: 10px;
+  padding-bottom: 1vmin;
   font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 
@@ -225,9 +329,76 @@ h2 {
 .top-page a {
   color:white;
   text-decoration: none;
-  font-size: 110%;
+  font-size: 2vmin;
 }
 
+.message-page-link {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/* .message-page-text {
+	display: inline-block;
+	perspective: 1000px;
+	perspective-origin: 50% 50%;
+	vertical-align: bottom;
+  overflow: hidden;
+  font-size: 30px;
+  z-index: 2;
+  color:#03a9f4;
+}
+
+.message-page-text span {
+	display: inline-block;
+	position: relative;
+	padding: 0.1em 0.3em;
+	transition: .4s;
+	transform-origin: 50% 0%;
+  transform-style: preserve-3d;
+}
+.message-page-text span:after {
+	display: inline-block;
+	position: absolute;
+	padding: 0.1em 0.3em;
+	left: 0;
+	top: 0;
+	content: attr(data-text);
+	color: #fff;
+  background-color: #FF0000;
+	transform-origin: 50% 0%;
+  transform: translate3d(0, 105%, 0) rotateX(-90deg);
+}
+
+.message-page-text:hover span {
+  background-color:#FF0000;
+  transform: translate3d(0, 0, -30px) rotateX(90deg);
+} */
+
+.message-page-text {
+  color: #FFF;
+  font-size: 3vmin;
+  font-weight: bold;
+  padding: 2vmin 4vmin;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 0.1vmin solid transparent;
+  outline: 0.1vmin solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1.2s cubic-bezier(0.2, 1, 0.2, 1);
+  z-index: 2;
+}
+
+.message-page-text:hover {
+  border-color: #FFF;
+  box-shadow: inset 0 0 3vmin rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+  outline-color: transparent;
+  outline-offset: 1.5vmin;
+  text-shadow: 0.3vmin 0.3vmin 0.5vmin #000;
+}
 /* -------------showページ------------- */
 
 .show-wrapper {

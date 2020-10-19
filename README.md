@@ -7,11 +7,6 @@
 | nickname              | string     | null: false |
 | email                 | string     | null: false |
 | encrypted_password    | string     | null: false |
-| first_name            | string     | null: false |
-| last_name             | string     | null: false |
-| first_name_kana       | string     | null: false |
-| last_name_kana        | string     | null: false |
-| birthday              | date       | null: false |
 
 ### Association
 
@@ -22,7 +17,17 @@
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
 | affiliates  | string     | null: false                    |
+
+### Association
+
+- belongs_to :user
+
+## messages テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
 | user        | references | null: false, foreign_key: true |
+| messages    | text       | null: false                    |
 
 ### Association
 

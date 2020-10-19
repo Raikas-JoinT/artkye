@@ -8,14 +8,25 @@
             <%= f.submit "取得", class: "keyword-input" %>
           <% end %>
       </div>
+
       <div class="auto-box">
-        <h2><span>キーワード情報をLINEに送信する</span></h2>
+        <h2><span>取得情報をLINEに送信する</span></h2>
         <%= form_with model: @affiliate, method: ":post", local: true do |form| %>
           <%= form.text_field :keyword, placeholder: "キーワードを入力する", class: "keyword-write" %>
           <%= form.submit "取得", class: "keyword-input" %>
         <% end %>
       </div>
     </div>
+
+    <div class="message-page-link">
+      <a href="/messages" class="message-page-text">情報共有ページはこちら</a>
+    </div>
+
+    <%# <div class="message-page-link">
+      <a href="/messages" class="message-page-text">
+        <span data-text="情報共有ページはこちら">情報共有ページはこちら</span>
+      </a>
+    </div> %>
   </div>
   <canvas class="background"></canvas>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>

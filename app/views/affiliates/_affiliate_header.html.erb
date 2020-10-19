@@ -9,13 +9,13 @@
     <div class="user-infomation">
       <% if user_signed_in? %>
         <div class="grid-6">
-          <%= link_to "#{current_user.nickname}さん", root_path, class: "user-nickname" %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
+          <%= link_to "#{current_user.nickname}さん", root_path, class: "btn-box1" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-box2" %>
         </div>
       <% else %>
         <div class="grid-6">
-          <%= link_to "ログイン", new_user_session_path, class: "login" %>
-          <%= link_to "新規登録", new_user_registration_path, class: "sign-up" %>
+          <%= link_to "ログイン", new_user_session_path, class: "btn-box2" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "btn-box2" %>
         </div>
       <% end %>
     </div>

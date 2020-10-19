@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="messages">
+    <h1>共有メッセージ一覧</h1>
+    <% if @messages %>
+      <% @messages.each do |message| %>
+        <p>
+          <strong><%= message.user.nickname %>：</strong>
+          <%= message.message %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+  <% if current_user %>
+    <%= form_with model: @message, local: true do |form| %>
+      <%= form.text_area :message, placeholder: "メッセージを共有する", rows: "2" %>
+      <%= form.submit "投稿" %>
+    <% end %>
+  <% else %>
+    <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+  <% end %>
+</div>
