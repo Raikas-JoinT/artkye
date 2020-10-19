@@ -1,4 +1,6 @@
 class AffiliatesController < ApplicationController
+  before_action :move_to_index, expect: [:index, :show]
+
   def index
     @affiliate = Affiliate.new
   end
@@ -50,5 +52,11 @@ class AffiliatesController < ApplicationController
   private
   def affiliate_params
     params.require(:affiliate).permit(:keyword)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
   end
 end
