@@ -1,0 +1,41 @@
+<div class="shared-page-wrapper">
+  <div class="shared-page-title">
+    <h2>情報共有広場</h2>
+    <p>自由に情報を共有しよう！</p>
+  </div>
+
+  <div class="shared-area-wrapper">
+    <div class="shared-area">
+      <% @messages.each do |message| %>
+          <div class="message-text-area">
+            <div class="message-text">
+              <%= message.message %>
+            </div>
+          </div>
+            <div class="bottom-area">
+              <div class="border-area-left">
+                <p class="user-name">
+                  <%= message.user.nickname %>
+                </p>
+              </div>
+              <div class="border-area-right">
+                <p class="ceated-at">
+                  <%= l message.created_at %>
+                </p>
+              </div>
+            </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="text-form-area">
+    <%= form_with model: @message, local: true do |form| %>
+      <div class="text-form-top">
+        <%= form.text_area :message, placeholder: "メッセージを共有する", class: "text-form" %>
+      </div>
+      <div class="text-form-bottom">
+      <%= form.submit "投稿", class: "btn input-form-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
