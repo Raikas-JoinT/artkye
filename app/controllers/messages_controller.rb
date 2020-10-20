@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def index
     @message = Message.new
-    @messages = Message.all
+    @messages = Message.all.order(created_at: "DESC")
     # @message = Message.new
     # @messages = @message.message.includes(:user)
   end

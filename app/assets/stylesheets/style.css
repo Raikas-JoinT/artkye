@@ -89,56 +89,6 @@ header {
 
 /* -------------ログインボタン------------- */
 
-/* .grid-6 {
-  float: right;
-}
-
-.user-nickname, .logout, .login, .sign-up {
-  padding: 8px 20px;
-  border: 1px solid white;
-}
-
-.user-nickname {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #00FF99;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.user-nickname:hover {
-  opacity: 0.7;
-}
-
-.logout {
-  text-decoration: none;
-  color:white;
-}
-
-.logout:hover {
-  opacity: 0.7;
-}
-
-.login {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: white;
-}
-
-.login:hover {
-  opacity: 0.7;
-}
-
-.sign-up {
-  text-decoration: none;
-  color:white;
-}
-
-.sign-up:hover {
-  opacity: 0.7;
-} */
-
 .grid-6 {
   font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
   float: right;
@@ -338,43 +288,6 @@ main {
   text-align: center;
 }
 
-/* .message-page-text {
-	display: inline-block;
-	perspective: 1000px;
-	perspective-origin: 50% 50%;
-	vertical-align: bottom;
-  overflow: hidden;
-  font-size: 30px;
-  z-index: 2;
-  color:#03a9f4;
-}
-
-.message-page-text span {
-	display: inline-block;
-	position: relative;
-	padding: 0.1em 0.3em;
-	transition: .4s;
-	transform-origin: 50% 0%;
-  transform-style: preserve-3d;
-}
-.message-page-text span:after {
-	display: inline-block;
-	position: absolute;
-	padding: 0.1em 0.3em;
-	left: 0;
-	top: 0;
-	content: attr(data-text);
-	color: #fff;
-  background-color: #FF0000;
-	transform-origin: 50% 0%;
-  transform: translate3d(0, 105%, 0) rotateX(-90deg);
-}
-
-.message-page-text:hover span {
-  background-color:#FF0000;
-  transform: translate3d(0, 0, -30px) rotateX(90deg);
-} */
-
 .message-page-text {
   color: #FFF;
   font-size: 3vmin;
@@ -519,3 +432,176 @@ main {
 }
 
 /* -------------showページ------------- */
+
+
+/* -------------情報共有ページ------------- */
+
+.shared-page-wrapper {
+  /* background-color: white; */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: 0.2vmin solid #D3D3D3; */
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}
+
+.shared-page-title {
+  /* background-color: white; */
+  width: calc(100% - 5%);
+  height: 10vh;
+  /* border: 0.2vmin solid #D3D3D3; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.shared-page-title h2 {
+  font-size: 5vmin;
+  color: white;
+  margin-bottom: 1vmin;
+  font-weight: 900;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shared-page-title p {
+  font-size: 1.8vmin;
+  color: white;
+}
+
+.shared-area-wrapper {
+  /* background-color: white; */
+  width: calc(100% - 5%);
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.1vmin solid #00FF99;
+}
+
+.shared-area {
+  /* background-color: white; */
+  width: calc(100% - 5%);
+  height: calc(100% - 5%);
+  /* border: 0.2vmin solid white; */
+  overflow: scroll;
+}
+
+.message-text-area {
+  width: 100%;
+  height: 26%;
+  /* color: white; */
+  border: 0.2vmin solid #D3D3D3;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+}
+
+.message-text {
+  width: 95%;
+  height: 85%;
+  overflow: scroll;
+  font-size: 2.5vmin;
+  background-color: white;
+}
+
+.bottom-area {
+  /* background-color: white; */
+  width: 100%;
+  height: 5%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2vmin;
+}
+
+.border-area-left {
+  background-color: white;
+  width: 50%;
+  height: 100%;
+  border: 0.2vmin solid #D3D3D3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 0 20px;
+}
+
+.user-name {
+  /* color: white; */
+  font-size: 2vmin;
+}
+
+.border-area-right {
+  background-color: white;
+  width: 50%;
+  height: 100%;
+  border: 0.2vmin solid #D3D3D3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 20px 0;
+}
+
+.ceated-at {
+  /* color: white; */
+  font-size: 2vmin;
+}
+
+.text-form-area {
+  /* background-color: white; */
+  width: calc(100% - 5%);
+  height: 20vh;
+  /* border: 0.2vmin solid #D3D3D3; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.text-form {
+  width: 60vw;
+  height: 10vh;
+  margin-top: 1vmin;
+  overflow: scroll;
+  font-size: 2vmin;
+  margin-bottom: 1vmin;
+}
+
+.input-form-btn {
+  width: 30vw;
+  height: 4vh;
+  border-radius: 15px;
+  font-size: 2vmin;
+  opacity: 0.8;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  box-shadow: 4px 4px #8b0000;
+}
+
+.input-form-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 4px;
+  left: 4px
+}
+
+.input-form-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+  background-color:#ea352d;
+}
+
+.text-form, .input-form-btn:focus {
+	outline:0;
+}
+
+/* -------------情報共有ページ------------- */
