@@ -50,7 +50,7 @@ table {
 body {
   width: 100%;
   height: 100vh;
-  background-image: url("https://krwsjapan.conohawing.com/wp-content/uploads/2020/10/spaceworld-scaled.jpg");
+  background-image: image-url("spaceworld.jpg");
   background-size: 100% 100%;
 }
 
@@ -238,6 +238,7 @@ main {
   padding: 2vmin;
   z-index: 2;
   background: linear-gradient(135deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
+  margin-bottom: 10vmin;
 }
 
 .keyword-write {
@@ -334,6 +335,14 @@ main {
 
 .page-title h2 {
   font-size: 4vmax;
+  color: white;
+  margin-bottom: 1vmin;
+  font-weight: 900;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .top-left {
@@ -389,6 +398,14 @@ main {
   font-size: 2vmax;
   /* border: 1px solid white; */
   padding: 0.5vmin 1vmin;
+  color: white;
+  margin-bottom: 1vmin;
+  font-weight: 900;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .scraping-info-bottom {
@@ -506,12 +523,31 @@ main {
   border-radius: 20px 20px 0 0;
 }
 
-.message-text {
+.message-text-image {
   width: 95%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-text {
+  width: 100%;
   height: 85%;
   overflow: scroll;
   font-size: 2.5vmin;
-  background-color: white;
+  // background-color: #e1ce08;
+}
+
+.message-image-right {
+  width: calc(100% - 65%);
+  height: 85%;
+  overflow: scroll;
+  font-size: 2.5vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: aquamarine;
 }
 
 .bottom-area {
@@ -566,6 +602,63 @@ main {
   text-align: center;
 }
 
+.text-form-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.image-file {
+  font-size: 3vmin;
+  color: white;
+  padding: 2vmin 2vmin;
+  text-align: center;
+  margin-left: 1vmin;
+  border-radius: 10px;
+  opacity: 1;
+  background:#48D1CC;
+  border: 1px solid #48D1CC;
+  color: #fff;
+  box-shadow: 0.6vmin 0.6vmin #5F9EA0;
+}
+
+.image-file:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.6vmin;
+  left: 0.6vmin;
+}
+
+.image-file:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  background-color:#48D1CC;
+}
+
+.hidden {
+  display: none;
+}
+
+.message-image {
+  width: 20vmin;
+  height: 13vmin;
+  border: 0.3vmin solid black;
+  padding: 0.7vmin 1.4vmin;
+  box-shadow: 0.8vmin 0.8vmin black;
+}
+
+.message-image:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.8vmin;
+  left: 0.8vmin;
+}
+
+.message-image:hover {
+  opacity: 0.6;
+}
+
 .text-form {
   width: 60vw;
   height: 10vh;
@@ -580,22 +673,22 @@ main {
   height: 4vh;
   border-radius: 15px;
   font-size: 2vmin;
-  opacity: 0.8;
+  opacity: 1;
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
-  box-shadow: 4px 4px #8b0000;
+  box-shadow: 0.6vmin 0.6vmin #8b0000;
 }
 
 .input-form-btn:active {
   box-shadow: none;
   position: relative;
-  top: 4px;
-  left: 4px
+  top: 0.6vmin;
+  left: 0.6vmin;
 }
 
 .input-form-btn:hover {
-  opacity: 1;
+  opacity: 0.8;
   cursor: pointer;
   background-color:#ea352d;
 }

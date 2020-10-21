@@ -2,8 +2,9 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = Message.all.order(created_at: "DESC")
-    # @message = Message.new
-    # @messages = @message.message.includes(:user)
+    @image_urls = Message.all.with_attached_image
+    @image_urls = @image_urls.map { |image_url| image_url.as_json.merge({ image_url: url_for(image_url.image) })}
+    # @image_urls = @image_urls.map {|image_url| image_url[:image_url]}
   end
 
   def create
@@ -13,6 +14,6 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:message).merge(user_id: current_user.id)
+    params.require(:message).permit(:message, :image).merge(user_id: current_user.id)
   end
 end
