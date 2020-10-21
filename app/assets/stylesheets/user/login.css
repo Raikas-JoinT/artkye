@@ -13,15 +13,15 @@
   font-size: 14px;
   cursor: pointer;
   border-radius: 15px;
-  box-shadow: 5px 5px #8b0000;
+  box-shadow: 0.6vmin 0.6vmin #8b0000;
   opacity: 0.8;
 }
 
 .login-red-btn:active {
   box-shadow: none;
   position: relative;
-  top: 5px;
-  left: 5px
+  top: 0.6vmin;
+  left: 0.6vmin;
 }
 
 .login-red-btn:focus {

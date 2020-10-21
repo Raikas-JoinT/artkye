@@ -7,23 +7,30 @@
   <div class="shared-area-wrapper">
     <div class="shared-area">
       <% @messages.each do |message| %>
-          <div class="message-text-area">
+        <div class="message-text-area">
+          <div class="message-text-image">
             <div class="message-text">
               <%= message.message %>
             </div>
-          </div>
-            <div class="bottom-area">
-              <div class="border-area-left">
-                <p class="user-name">
-                  <%= message.user.nickname %>
-                </p>
-              </div>
-              <div class="border-area-right">
-                <p class="ceated-at">
-                  <%= l message.created_at %>
-                </p>
-              </div>
+            <div class="message-image-right">
+              <%= link_to url_for(message.image) do %>
+                <%= image_tag message.image, class: 'message-image' if message.image.attached? %>
+              <% end %>
             </div>
+          </div>
+        </div>
+        <div class="bottom-area">
+          <div class="border-area-left">
+            <p class="user-name">
+              <%= "#{message.user.nickname}さんの投稿" %>
+            </p>
+          </div>
+          <div class="border-area-right">
+            <p class="ceated-at">
+              <%= l message.created_at %>
+            </p>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
@@ -31,7 +38,11 @@
   <div class="text-form-area">
     <%= form_with model: @message, local: true do |form| %>
       <div class="text-form-top">
-        <%= form.text_area :message, placeholder: "メッセージを共有する", class: "text-form" %>
+        <%= form.text_area :message, placeholder: "メッセージを共有する(※500文字まで)", class: "text-form", maxlength:"500" %>
+        <label class="form-image">
+          <span class="image-file">画像</span>
+          <%= form.file_field :image, class: 'hidden' %>
+        </label>
       </div>
       <div class="text-form-bottom">
       <%= form.submit "投稿", class: "btn input-form-btn" %>

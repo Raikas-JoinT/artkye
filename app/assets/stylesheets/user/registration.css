@@ -1,3 +1,15 @@
+.form-header-text {
+  font-size: 5vmin;
+  color: white;
+  margin-bottom: 1vmin;
+  font-weight: 900;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .user-signup {
   width: 100%;
   height: calc(100vh - 90px);
@@ -53,15 +65,15 @@
   font-weight: 900;
   cursor: pointer;
   border-radius: 10px;
-  box-shadow: 5px 5px #8b0000;
+  box-shadow: 0.6vmin 0.6vmin #8b0000;
   opacity: 0.8;
 }
 
 .register-red-btn:active {
   box-shadow: none;
   position: relative;
-  top: 5px;
-  left: 5px
+  top: 0.6vmin;
+  left: 0.6vmin;
 }
 
 .register-red-btn:focus {
