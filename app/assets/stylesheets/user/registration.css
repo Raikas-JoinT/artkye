@@ -118,3 +118,8 @@
 .login-user:hover {
   opacity: 1;
 }
+
+.register-flash-message {
+  text-align: center;
+  color: red;
+}
