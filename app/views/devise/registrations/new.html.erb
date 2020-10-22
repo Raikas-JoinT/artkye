@@ -8,6 +8,11 @@
     <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
       <%= devise_error_messages! %>
 
+      <div class='register-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
+
       <div class="form-group">
         <div class='form-text-wrapper'>
           <label class="form-text">ニックネーム</label>
