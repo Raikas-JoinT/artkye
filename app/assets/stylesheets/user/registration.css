@@ -91,6 +91,7 @@
 }
 
 .login-user{
+  font-weight: 900;
   position: relative;
   display: inline-block;
   transition: .3s;
