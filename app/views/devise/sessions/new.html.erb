@@ -33,9 +33,14 @@
         <%= f.submit "ログイン" ,class:"register-red-btn" %>
       </div>
 
+      <div class="guest-user-link">
+        <%= link_to '※ゲストログイン', users_guest_sign_in_path, method: :post, class: "guest-user" %>
+      </div>
+
       <div class="new-user-link">
         <%= link_to "※新規登録はこちら", new_user_registration_path, class: "new-user" %>
       </div>
+
     <% end %>
   </div>
 </div>

@@ -40,7 +40,7 @@
 }
 
 .new-user-link {
-  margin-top: 10px;
+  margin-top: 1vmin;
 }
 
 /* .new-user {
@@ -73,5 +73,38 @@
 }
 
 .new-user:hover {
+  opacity: 1;
+}
+
+.guest-user-link {
+  margin-top: 1vmin;
+}
+
+.guest-user {
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+  color: white;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.guest-user::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+.guest-user:hover::after{
+  width: 100%;
+}
+
+.guest-user:hover {
   opacity: 1;
 }
