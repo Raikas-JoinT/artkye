@@ -12,11 +12,13 @@
             <div class="message-text">
               <%= message.message %>
             </div>
-            <div class="message-image-right">
-              <%= link_to url_for(message.image) do %>
-                <%= image_tag message.image, class: 'message-image' if message.image.attached? %>
-              <% end %>
-            </div>
+            <% if message.image.attached? %>
+              <div class="message-image-right">
+                <%= link_to url_for(message.image) do %>
+                  <%= image_tag message.image, class: 'message-image' %>
+                <% end %>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="bottom-area">

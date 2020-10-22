@@ -3,8 +3,13 @@ class MessagesController < ApplicationController
     @message = Message.new
     @messages = Message.all.order(created_at: "DESC")
     @image_urls = Message.all.with_attached_image
-    @image_urls = @image_urls.map { |image_url| image_url.as_json.merge({ image_url: url_for(image_url.image) })}
-    # @image_urls = @image_urls.map {|image_url| image_url[:image_url]}
+    test = []
+    @image_urls.each do |image_url|
+      if image_url.image.attached?
+        test << image_url.as_json.merge({ image_url: url_for(image_url.image) })
+      end
+    end
+    @image_urls = test
   end
 
   def create
