@@ -1,4 +1,7 @@
 class MessagesController < ApplicationController
+
+  before_action :search_message, only: [:index, :search]
+
   def index
     @message = Message.new
     @messages = Message.all.order(created_at: "DESC")
@@ -12,6 +15,11 @@ class MessagesController < ApplicationController
     @image_urls = test
   end
 
+  def search
+    @results = @p.result.order(created_at: "DESC")
+    # @result_messages = @results.select("message").distinct
+  end
+
   def create
     Message.create(message_params)
     redirect_to messages_path
@@ -20,5 +28,9 @@ class MessagesController < ApplicationController
   private
   def message_params
     params.require(:message).permit(:message, :image).merge(user_id: current_user.id)
+  end
+
+  def search_message
+    @p = Message.ransack(params[:q])
   end
 end
