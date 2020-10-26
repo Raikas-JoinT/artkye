@@ -493,6 +493,22 @@ main {
   color: white;
 }
 
+.keyword-get-form {
+  display: flex;
+  align-items: center;
+}
+
+.keyword-message {
+  font-size: 1.5vmin;
+  width: 30vmin;
+  height: 3.8vmin;
+}
+
+.keyword-message-btn {
+  font-size: 1.5vmin;
+  padding: 0.5vmin 1vmin;
+}
+
 .shared-area-wrapper {
   /* background-color: white; */
   width: calc(100% - 5%);
