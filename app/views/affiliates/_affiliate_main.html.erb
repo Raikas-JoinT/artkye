@@ -4,7 +4,7 @@
       <div class="get-box">
         <h2><span>キーワード情報を取得する</span></h2>
           <%= form_with model: @affiliate, local: true do |f| %>
-            <%= f.text_field :keyword, placeholder: "キーワードを入力する", class: "keyword-write" %>
+            <%= f.text_field :keyword, placeholder: "キーワードを入力", class: "keyword-write" %>
             <%= f.submit "取得", class: "keyword-input" %>
           <% end %>
       </div>
