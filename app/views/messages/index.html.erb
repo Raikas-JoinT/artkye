@@ -2,10 +2,13 @@
   <div class="shared-page-title">
     <h2>情報共有広場</h2>
     <p>自由に情報を共有しよう！</p>
-    <div class="keyword-get-area">
+  </div>
+
+  <div class="keyword-get-area">
+    <div class="keyword-get-form">
       <%= search_form_for @p, url: messages_search_path do |form| %>
-        <%= form.search_field :message_cont, placeholder: "キーワードを入力" %>
-        <%= form.submit "検索" %>
+        <%= form.search_field :message_cont, placeholder: "キーワードを入力", class: 'keyword-message' %>
+        <%= form.submit "検索", class: "keyword-message-btn" %>
       <% end %>
     </div>
   </div>
