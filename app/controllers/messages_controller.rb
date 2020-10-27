@@ -17,6 +17,7 @@ class MessagesController < ApplicationController
 
   def search
     @results = @p.result.order(created_at: "DESC")
+    # @messages = @results.map {|message| message[:message]}.uniq
     # @result_messages = @results.select("message").distinct
   end
 

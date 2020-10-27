@@ -7,6 +7,7 @@
   <div class="keyword-get-area">
     <div class="keyword-get-form">
       <%= search_form_for @p, url: messages_search_path do |form| %>
+        <%= form.label :message_cont, '投稿内検索', class: 'keyword-message-label' %>
         <%= form.search_field :message_cont, placeholder: "キーワードを入力", class: 'keyword-message' %>
         <%= form.submit "検索", class: "keyword-message-btn" %>
       <% end %>
@@ -49,7 +50,7 @@
   <div class="text-form-area">
     <%= form_with model: @message, local: true do |form| %>
       <div class="text-form-top">
-        <%= form.text_area :message, placeholder: "メッセージを共有する(※500文字まで)", class: "text-form", maxlength:"500" %>
+        <%= form.text_area :message, placeholder: "メッセージを共有する(※1000文字まで)", class: "text-form", maxlength:"1000" %>
         <label class="form-image">
           <span class="image-file">画像</span>
           <%= form.file_field :image, class: 'hidden' %>

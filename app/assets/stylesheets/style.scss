@@ -498,15 +498,51 @@ main {
   align-items: center;
 }
 
+.keyword-message-label {
+  font-size: 1.5vmin;
+  color: white;
+}
+
 .keyword-message {
   font-size: 1.5vmin;
+  font-weight: 900;
   width: 30vmin;
   height: 3.8vmin;
+  margin-bottom: 1vmin;
 }
 
 .keyword-message-btn {
   font-size: 1.5vmin;
-  padding: 0.5vmin 1vmin;
+  font-weight: 900;
+  padding: 0.2vmin 0.4vmin;
+  border-radius: 6px;
+  font-size: 2vmin;
+  opacity: 1;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  box-shadow: 0.4vmin 0.4vmin #8b0000;
+}
+
+.keyword-message-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.4vmin;
+  left: 0.4vmin;
+}
+
+.keyword-message-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  background-color:#ea352d;
+}
+
+.text-form, .input-form-btn:focus {
+	outline:0;
+}
+
+.keyword-message, .keyword-message-btn:focus {
+	outline:0;
 }
 
 .shared-area-wrapper {
@@ -552,6 +588,7 @@ main {
   height: 85%;
   overflow: scroll;
   font-size: 2.5vmin;
+  font-weight: 900;
   // background-color: #e1ce08;
 }
 
@@ -627,6 +664,7 @@ main {
 
 .image-file {
   font-size: 3vmin;
+  font-weight: 900;
   color: white;
   padding: 2vmin 2vmin;
   text-align: center;
@@ -681,6 +719,7 @@ main {
   margin-top: 1vmin;
   overflow: scroll;
   font-size: 2vmin;
+  font-weight: 900;
   margin-bottom: 1vmin;
 }
 
@@ -688,7 +727,8 @@ main {
   width: 30vw;
   height: 4vh;
   border-radius: 15px;
-  font-size: 2vmin;
+  font-size: 2.5vmin;
+  font-weight: 900;
   opacity: 1;
   background: #ea352d;
   border: 1px solid #ea352d;
