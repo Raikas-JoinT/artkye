@@ -24,7 +24,7 @@
             </div>
             <% if result.image.attached? %>
               <div class="message-image-right">
-                <%= link_to url_for(result.image) do %>
+                <%= link_to url_for(result.image), target: :_blank do %>
                   <%= image_tag result.image, class: 'message-image' %>
                 <% end %>
               </div>
