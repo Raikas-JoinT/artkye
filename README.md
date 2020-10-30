@@ -69,6 +69,9 @@ https://artkey.herokuapp.com/
 
 - has_many :affiliates
 - has_many :messages
+- has_many :chats
+- has_many :entries
+- has_many :rooms, through: :entries
 
 ## affiliates テーブル
 
@@ -90,3 +93,40 @@ https://artkey.herokuapp.com/
 ### Association
 
 - belongs_to :user
+
+## entries テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| user        | references | null: false, foreign_key: true |
+| room        | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
+
+## rooms テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| user        | references | null: false, foreign_key: true |
+
+### Association
+
+- has_many :chats
+- has_many :entries
+- has_many :users, through: :entries
+
+## chats テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| user        | references | null: false, foreign_key: true |
+| room        | references | null: false, foreign_key: true |
+| chat        | text       | null: false                    |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
