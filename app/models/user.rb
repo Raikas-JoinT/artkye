@@ -8,6 +8,8 @@ class User < ApplicationRecord
   acts_as_follower
 
   has_many :messages
+  has_many :chats, dependent: :destroy
+  has_many :entries, dependent: :destroy
 
   with_options presence: true do
     validates :nickname
