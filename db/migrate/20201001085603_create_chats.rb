@@ -3,7 +3,7 @@ class CreateChats < ActiveRecord::Migration[6.0]
     create_table :chats do |t|
       t.integer :user_id
       t.integer :room_id
-      t.text :chat, null: false
+      t.text :content, null: false
 
       t.timestamps
     end
