@@ -1,0 +1,8 @@
+<%= render partial: "follow", locals: {controller: :users, action: :follow_list,user_id: @user.id} %>
+
+<% if current_user.id == @user.id %>
+  <%= @user.follow_count %>
+    <%= link_to "人気になる", {controller: :users, action: :follow_list,user_id: @user.id}, method: :get %>
+  <%= @user.followers_count %>
+    <%= link_to "人あなたを気になる", {controller: :users, action: :follower_list,user_id: @user.id}, method: :get %>
+<% end %>
