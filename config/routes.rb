@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   resources :affiliates, only: [:index, :show, :create]
   resources :messages, only: [:index, :create]
   resources :users, only: [:show, :edit, :update]
-  resources :rooms, only: [:create,:show] do
-    resources :chats, only: [:create]
-  end
+  resources :rooms, only: [:create,:show]
+  resources :chats, only: [:create]
   get 'messages/search', to: 'messages#search'
 
   put 'users/follow/:user_id',to: 'users#follow'
