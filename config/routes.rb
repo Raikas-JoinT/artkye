@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   root to: "affiliates#index"
   resources :affiliates, only: [:index, :show, :create]
   resources :messages, only: [:index, :create]
-  get 'messages/search', to: 'messages#search'
-
   resources :users, only: [:show]
+  get 'messages/search', to: 'messages#search'
 
   put 'users/follow/:user_id',to: 'users#follow'
   put 'users/unfollow/:user_id',to: 'users#unfollow'
