@@ -34,7 +34,8 @@
         <div class="bottom-area">
           <div class="border-area-left">
             <p class="user-name">
-              <%= "#{message.user.nickname}さんの投稿" %>
+              <%= link_to "#{message.user.nickname}", user_path(message.id) %>
+              <span>さんの投稿</span>
             </p>
           </div>
           <div class="border-area-right">

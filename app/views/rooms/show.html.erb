@@ -1,7 +1,7 @@
 <div class="left-button">
   <%= link_to "ユーザー一覧に戻る", "#", class:"edit-link" %>
 </div>
-<h4 class="rooms-title">気になる同士</h4>
+<h4 class="rooms-title">相互フォローチャット</h4>
 <% @entries.each do |e| %>
   <div class="user-name">
   <strong>
@@ -21,8 +21,10 @@
           <div class="chat-face">
             <%# <%= image_tag c.user.avatar, class:"user-image" %>
           </div>
-          <div class="chat-hukidashi"> <strong><%= c.content %></strong> <br>
-            <%= c.created_at%>
+          <div class="chat-hukidashi">
+            <%= c.user.nickname %><br>
+            <%= c.content %><br>
+            <%= c.created_at.strftime("%Y-%m-%d %H:%M") %>
           </div>
         </div>
       <% end %>
