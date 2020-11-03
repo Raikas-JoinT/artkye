@@ -1,3 +1,167 @@
-// Place all the styles related to the rooms controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* -------------ここからリセットCSS------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* -------------ここまでリセットCSS------------- */
+
+/* -------------ここからroomページ------------- */
+
+.chat-room-wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+
+.chat-room-header {
+  width: 100%;
+  height: 7vmin;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+}
+
+.room-container {
+  width: 100%;
+  height: calc(100vh - 7vmin);
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.room-container-child {
+  width: 950px;
+  height: calc(100% - 6vh);
+  background-color: white;
+  display: flex;
+  border: 1px solid lightgrey;
+}
+
+.room-container-child-left {
+  width: 35%;
+}
+
+.left-room-top {
+  height: 8vmin;
+  // background-color: aquamarine;
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 2.5vmin;
+}
+
+.left-room {
+  height: calc(100% - 8vmin);
+  // background-color: lightpink;
+  border-right: 1px solid lightgrey;
+  overflow: scroll;
+}
+
+.room-container-child-right {
+  width: calc(100% - 35%);
+}
+
+.right-room-top {
+  height: 8vmin;
+  // background-color: wheat;
+  border-bottom: 1px solid lightgrey;
+}
+
+.right-room {
+  height: calc(100% - 8vmin - 70px);
+  // background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-room-child {
+  // background-color: lightsalmon;
+  width: 90%;
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.chat-room-user-content {
+  width: 70%;
+  margin-bottom: 2vmin;
+  background-color: lightgray;
+}
+
+.right-room-bottom {
+  height: 70px;
+  // background-color: lightsalmon;
+  display: flex;
+  justify-content: center;
+}
+
+.chat-room-form-left {
+  display: flex;
+}
+
+.chat-room-text-form {
+  width: 30vmax;
+  height: 45px;
+  border-radius: 30px;
+  padding: 1vmin 2vmin;
+  font-size: 2vmin;
+}
+
+.chat-room-form-right {
+  display: flex;
+  align-items: center;
+}
+
+.chat-room-input-btn {
+  margin-left: 0.5vmin;
+  border-radius: 30px;
+  padding: 10px 2vmin;
+}
+
+.chat-room-text-form, .chat-room-input-btn:focus {
+  outline: 0;
+}
+/* -------------ここまでroomページ------------- */
