@@ -5,7 +5,8 @@
 # 企画背景
 アフィリエイトをしていた経験から、キーワード1つで必要な情報を取得できれば圧倒的な効率化が実現可能だと思い、企業や個人選ばず、誰でも利用できるサービスを作ることにしました。
 # アプリケーションURL
-https://artkey.herokuapp.com/
+https://artkey.herokuapp.com/  (※heroku)
+http://54.249.134.64/  (※aws)
 # テスト用アカウント
 - ゲストログイン機能実装済みです。
 # 利用方法
@@ -67,7 +68,6 @@ https://artkey.herokuapp.com/
 
 ### Association
 
-- has_many :affiliates
 - has_many :messages
 - has_many :chats
 - has_many :entries
@@ -80,8 +80,6 @@ https://artkey.herokuapp.com/
 | affiliates  | string     | null: false                    |
 
 ### Association
-
-- belongs_to :user
 
 ## messages テーブル
 
