@@ -5,18 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= yield %>
 
-  <footer>
-    <div class="footer-wrapper">
-      <div class="top-page">
-        <a href="/">〜 top page 〜</a>
+    <footer>
+      <div class="footer-wrapper">
+        <div class="top-page">
+          <a href="/">〜 top page 〜</a>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
   </body>
 
 </html>

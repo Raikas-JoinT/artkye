@@ -25,7 +25,7 @@
             <% if message.image.attached? %>
               <div class="message-image-right">
                 <%= link_to url_for(message.image), target: :_blank do %>
-                  <%= image_tag message.image, class: 'message-image' %>
+                  <%= image_tag message.image, id: 'image', class: 'message-image' %>
                 <% end %>
               </div>
             <% end %>
@@ -49,13 +49,14 @@
   </div>
 
   <div class="text-form-area">
-    <%= form_with model: @message, local: true do |form| %>
+    <%= form_with model: @message, id: 'new_message', local: true do |form| %>
       <div class="text-form-top">
         <%= form.text_area :message, placeholder: "メッセージを共有する(※1000文字まで)", class: "text-form", maxlength:"1000" %>
         <label class="form-image">
           <span class="image-file">画像</span>
           <%= form.file_field :image, class: 'hidden' %>
         </label>
+        <div id="image-list"></div>
       </div>
       <div class="text-form-bottom">
       <%= form.submit "投稿", class: "btn input-form-btn" %>
