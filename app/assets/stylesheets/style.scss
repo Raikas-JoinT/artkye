@@ -695,6 +695,15 @@ main {
   display: none;
 }
 
+img {
+  padding: 0.5vmin;
+  border:1px solid white;
+  margin-left: 2vmin;
+  height: 5vmin;
+  width: 10vmin;
+  object-fit: contain;
+}
+
 .message-image {
   width: 20vmin;
   height: 13vmin;
