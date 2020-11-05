@@ -67,6 +67,7 @@ gem 'nokogiri'
 gem 'google-api-client'
 gem 'jquery-rails'
 gem 'mini_magick'
+gem 'carrierwave'
 gem 'image_processing', '~> 1.2'
 
 group :production do
