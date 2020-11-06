@@ -1,0 +1,336 @@
+/* -------------ここからリセットCSS------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+ol, ul, li {
+  list-style: none;
+  margin-bottom: 1.5vmin;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* -------------ここまでリセットCSS------------- */
+
+.user-registration-wrapper {
+  width: 100%;
+  height: 100vh;
+  /* background-color: white; */
+}
+
+/* -------------タイトルエリア------------- */
+
+.user-registration-title-wrapper {
+  width: 100%;
+  height: 8vmin;
+  /* background-color: thistle; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-registration-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-registration-title {
+  font-size: 5vmin;
+  font-weight: 900;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* -------------タイトルエリア------------- */
+
+/* -------------入力フォームエリア------------- */
+
+.user-registration-form-wrapper {
+  width: 100%;
+  height: calc(100% - 8vmin - 8vmin);
+  /* background-color: wheat; */
+  display: flex;
+  justify-content: center;
+}
+
+.user-registration-form-container {
+  width: 70%;
+  height: 100%;
+  // background-color: darkorchid;
+}
+
+/* -------------プロフィール画像エリア------------- */
+
+.user-registration-avatar-area {
+  width: 100%;
+  height: 20vh;
+  // background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// .user-registration-avatar-icon {
+//   width: 50%;
+//   height: 90%;
+//   background-color: aqua;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.user-registration-avatar {
+  width: 80%;
+  height: 90%;
+  // background-color: tomato;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.avatar-icon {
+  width: 15vmin;
+  height: 15vmin;
+}
+
+.form-avatar-image {
+  font-size: 0.5vmin;
+  padding: 0.3vmin 0.6vmin;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0.6vmin 0.6vmin gray;
+  opacity: 1;
+}
+
+.avatar-image {
+  color: black;
+  cursor: pointer;
+}
+
+.form-avatar-image:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.6vmin;
+  left: 0.6vmin;
+}
+
+.form-avatar-image:hover {
+  opacity: 0.8;
+  background-color: white;
+  cursor:pointer
+}
+
+/* -------------プロフィール画像エリア------------- */
+
+.user-registration-input-area {
+  width: 100%;
+  height: calc(100% - 20vh - 7vh);
+  /* background-color: deepskyblue; */
+  overflow: scroll;
+  border: 1px solid #00FF99;
+  padding: 5vmin;
+}
+
+.error-message-count {
+  font-weight: 900;
+  margin-bottom: 3vmin;
+}
+
+.user-registration-flash-message {
+  text-align: center;
+  padding: 1vmin;
+  font-size: 1.8vmin;
+  color: red;
+  margin-bottom: 3vmin;
+}
+
+.user-registration-input-form {
+  margin-bottom: 3vmin;
+}
+
+.info-text {
+  font-size: 0.5vmin;
+  color: red;
+}
+
+.user-registration-induction-text {
+  text-align: left;
+  margin-bottom: 1vmin;
+}
+
+.induction-text {
+  color: white;
+  font-size: 2vmin;
+}
+
+.mandatory {
+  color: red;
+  font-size: 1.5vmin;
+  font-weight: 900;
+}
+
+.input-default {
+  width: 60%;
+  height: 5vmin;
+  font-size: 2vmin;
+  margin-bottom: 0.5vmin;
+}
+
+.input-default, .first-name, .last-name:focus {
+  outline:0;
+}
+
+.identification {
+  width: 15vmin;
+  background-color: yellow;
+  color: red;
+  font-size: 2.5vmin;
+  font-weight: 900;
+  margin-bottom: 1vmin;
+}
+
+.identification-text {
+  color: white;
+  font-size: 1.8vmin;
+}
+
+.user-registration-name-wrapper {
+  display: flex;
+}
+
+.first-name {
+  width: 35%;
+  height: 5vmin;
+  font-size: 2vmin;
+  margin-bottom: 0.5vmin;
+  margin-right: 2vmin;
+}
+
+.last-name {
+  width: 35%;
+  height: 5vmin;
+  font-size: 2vmin;
+  margin-bottom: 0.5vmin;
+}
+
+.user-registration-submit-text {
+  display: flex;
+  justify-content: center;
+  align-items:  center;
+}
+
+.form-bottom-text {
+  padding-bottom: 0.5vmin;
+  border-bottom: 1px solid yellow;
+  color: white;
+}
+
+.final-confirmation {
+  text-align: center;
+}
+
+.form-bottom-text span {
+  color: red;
+  font-weight: 900;
+}
+
+/* -------------入力フォームエリア------------- */
+
+/* -------------送信ボタンエリア------------- */
+
+.user-registration-submit-area {
+  width: 100%;
+  height: 7vh;
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-registration-btn {
+  padding: 0.1vmin 10vmin;
+  font-size: 3vmin;
+  color: white;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0.6vmin 0.6vmin #8b0000;
+  opacity: 1;
+}
+
+.user-registration-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.6vmin;
+  left: 0.6vmin;
+}
+
+.user-registration-btn:focus {
+  outline:0;
+}
+
+.user-registration-btn:hover {
+  opacity: 0.8;
+  background-color:#ea352d;
+  cursor:pointer
+}
+
+/* -------------送信ボタンエリア------------- */
+
+/* -------------ボトムエリア------------- */
+
+.user-registration-bottom-wrapper {
+  width: 100%;
+  height: 8vmin;
+  /* background-color: yellowgreen; */
+}
+
+/* -------------ボトムエリア------------- */

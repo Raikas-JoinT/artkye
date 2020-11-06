@@ -1,3 +1,5 @@
+<%= image_tag @user.avatar%>
+
 <%= render partial: "follow", locals: {controller: :users, action: :follow_list,user_id: @user.id} %>
 
 <% if current_user.id == @user.id %>

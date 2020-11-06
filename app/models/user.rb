@@ -14,11 +14,15 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :nickname
     validates :email
-    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, allow_blank: true }
+    validates :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, allow_blank: true }
+    validates :last_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, allow_blank: true }
+    validates :first_name_kana, format: { with: /\A[ァ-ヶ]+\z/, allow_blank: true }
+    validates :last_name_kana, format: { with: /\A[ァ-ヶ]+\z/, allow_blank: true }
   end
 
   def self.guest
-    find_or_create_by!(nickname: 'ゲスト', email: 'guest@example.com') do |user|
+    find_or_create_by!(nickname: 'ゲスト', email: 'guest@example.com', avatar: 'https://krwsjapan.conohawing.com/wp-content/uploads/2020/11/no-image.jpg', first_name: '山田', last_name: '太郎', first_name_kana: 'ヤマダ', last_name_kana: 'タロウ') do |user|
       user.password = SecureRandom.urlsafe_base64
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
     end

@@ -65,6 +65,11 @@
 | nickname              | string     | null: false |
 | email                 | string     | null: false |
 | encrypted_password    | string     | null: false |
+| avatar                | string     | null: false |
+| first_name            | string     | null: false |
+| last_name             | string     | null: false |
+| first_name_kana       | string     | null: false |
+| last_name_kana        | string     | null: false |
 
 ### Association
 

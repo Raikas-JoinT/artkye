@@ -1,58 +1,123 @@
-<div class="user-signup">
-  <div class="user-info">
-    <div class='form-header'>
-      <h2 class='form-header-text'>
-        会員情報入力
-      </h2>
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+  <div class="user-registration-wrapper">
+    <div class="user-registration-title-wrapper">
+      <div class="user-registration-title-container">
+        <h2 class="user-registration-title">新規会員登録</h2>
+      </div>
     </div>
-    <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
-      <%= devise_error_messages! %>
 
-      <div class='register-flash-message'>
-        <%= flash[:notice] %>
-        <%= flash[:alert] %>
-      </div>
-
-      <div class="form-group">
-        <div class='form-text-wrapper'>
-          <label class="form-text">ニックネーム</label>
-          <span class="indispensable">必須</span>
+    <div class="user-registration-form-wrapper">
+      <div class="user-registration-form-container">
+        <div class="user-registration-avatar-area">
+          <div class="user-registration-avatar">
+            <div class="user-registration-avatar-icon" id="image-list">
+              <%= image_tag 'https://krwsjapan.conohawing.com/wp-content/uploads/2020/11/Screenshot_at_Nov_06_23-58-09-removebg-preview.png', class: 'avatar-icon' %>
+            </div>
+            <label class="form-avatar-image">
+              <span class="avatar-image">プロフィール画像を選択</span>
+              <%= f.file_field :avatar, class: 'hidden' %>
+            </label>
+          </div>
         </div>
-        <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例) 山田太郎", maxlength:"10" %>
-      </div>
+        <div class="user-registration-input-area">
+          <div class='user-registration-flash-message'>
+            <%= devise_error_messages! %>
+          </div>
 
-      <div class="form-group">
-        <div class='form-text-wrapper'>
-          <label class="form-text">メールアドレス</label>
-          <span class="indispensable">必須</span>
+          <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">ニックネーム</label>
+              <span class="mandatory">(必須)</span>
+            </div>
+            <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例) 山田太郎(ヤマダタロウ)", maxlength:"40" %>
+          </div>
+
+          <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">メールアドレス</label>
+              <span class="mandatory">(必須)</span>
+            </div>
+            <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+          </div>
+
+          <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">パスワード</label>
+              <span class="mandatory">(必須)</span>
+            </div>
+            <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
+            <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
+          </div>
+
+          <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">確認用パスワード</label>
+              <span class="mandatory">(必須)</span>
+            </div>
+            <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+          </div>
+
+          <div class="user-registration-input-form">
+            <p class='identification'>
+              【本人確認】
+            </p>
+            <p class='identification-text'>
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。
+            </p>
+            <p class='identification-text'>
+              他のお客さまに公開されることはありません。
+            </p>
+          </div>
+
+          <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">お名前(全角)</label>
+              <span class="mandatory">(必須)</span>
+            </div>
+            <div class="user-registration-name-wrapper">
+              <%= f.text_field :first_name, class:"first-name", id:"first-name", placeholder:"例) 山田" %>
+              <%= f.text_field :last_name, class:"last-name", id:"last-name", placeholder:"例) 太郎" %>
+            </div>
+          </div>
+
+          <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">お名前カナ(全角)</label>
+              <span class="mandatory">(必須)</span>
+            </div>
+            <div class="user-registration-name-wrapper">
+              <%= f.text_field :first_name_kana, class:"first-name", id:"first-name-kana", placeholder:"例) ヤマダ" %>
+              <%= f.text_field :last_name_kana, class:"last-name", id:"last-name-kana", placeholder:"例) タロウ" %>
+            </div>
+          </div>
+
+          <div class="user-registration-input-form">
+            <div class="user-registration-submit-text">
+              <div class="final-confirmation">
+                <h2 class='form-bottom-text'>
+                  会員登録のボタンを押すことにより、
+                  <br><span>利用規約</span>に同意したものとみなします。
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <%# <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text"></label>
+              <span class="mandatory">(必須)</span>
+            </div>
+          </div> %>
+
         </div>
-        <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
-      </div>
 
-      <div class="form-group">
-        <div class='form-text-wrapper'>
-          <label class="form-text">パスワード</label>
-          <span class="indispensable">必須</span>
+        <div class="user-registration-submit-area">
+          <%= f.submit "会員登録" ,class:"user-registration-btn" %>
         </div>
-        <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
-        <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
       </div>
-      <div class="form-group">
-        <div class='form-text-wrapper'>
-          <label class="form-text">パスワード(確認)</label>
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
-      </div>
+    </div>
 
-      <div class='register-btn'>
-        <%= f.submit "会員登録" ,class:"register-red-btn" %>
-      </div>
-
-      <div class="login-user-link">
-        <%= link_to "※ログインはこちら", new_user_session_path, class: "login-user" %>
-      </div>
-
-    <% end %>
+    <div class="user-registration-bottom-wrapper">
+    </div>
   </div>
-</div>
+<% end %>

@@ -140,6 +140,8 @@ GEM
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.13.1)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     google-api-client (0.46.1)
@@ -354,6 +356,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   devise
+  font-awesome-rails
   google-api-client
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
