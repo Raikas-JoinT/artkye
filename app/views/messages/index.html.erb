@@ -47,7 +47,7 @@
                 <%= link_to "#{message.user.nickname}", edit_user_registration_path %>
                 <span>さんの投稿</span>
               <% else %>
-              　 <%= link_to user_path(message.user_id) do %>
+                <%= link_to user_path(message.user_id) do %>
                   <%= image_tag message.user.avatar, class: 'message-user-avatar-image' %>
                 <% end %>
                 <%= link_to "#{message.user.nickname}", user_path(message.user_id) %>
@@ -76,7 +76,7 @@
         <div id="image-list"></div>
       </div>
       <div class="text-form-bottom">
-      <%= form.submit "投稿", class: "btn input-form-btn" %>
+        <%= form.submit "投稿", class: "btn input-form-btn" %>
       </div>
     <% end %>
   </div>

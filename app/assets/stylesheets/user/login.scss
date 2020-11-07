@@ -91,7 +91,7 @@ table {
 
 .user-session-form-wrapper {
   width: 100%;
-  height: calc(100% - 20vh - 20vh);
+  height: calc(100% - 20vh - 20vh - 5vh);
   // background-color: burlywood;
   display: flex;
   justify-content: center;
@@ -164,7 +164,7 @@ table {
   // background-color: lightblue;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .user-session-btn {
