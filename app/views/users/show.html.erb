@@ -1,4 +1,8 @@
-<%= image_tag @user.avatar%>
+  <% if user_signed_in? && @user.test_image %>
+    <%= image_tag @user.test_image %>
+  <% else %>
+    <%= image_tag @user.avatar %>
+  <% end %>
 
 <%= render partial: "follow", locals: {controller: :users, action: :follow_list,user_id: @user.id} %>
 

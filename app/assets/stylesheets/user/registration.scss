@@ -136,14 +136,15 @@ table {
 .avatar-icon {
   width: 15vmin;
   height: 15vmin;
+  margin-bottom: 1vmin;
 }
 
 .form-avatar-image {
   font-size: 0.5vmin;
-  padding: 0.3vmin 0.6vmin;
+  padding: 0.5vmin 1vmin;
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0.6vmin 0.6vmin gray;
+  box-shadow: 0.3vmin 0.3vmin gray;
   opacity: 1;
 }
 
@@ -155,8 +156,8 @@ table {
 .form-avatar-image:active {
   box-shadow: none;
   position: relative;
-  top: 0.6vmin;
-  left: 0.6vmin;
+  top: 0.3vmin;
+  left: 0.3vmin;
 }
 
 .form-avatar-image:hover {
@@ -173,17 +174,16 @@ table {
   /* background-color: deepskyblue; */
   overflow: scroll;
   border: 1px solid #00FF99;
-  padding: 5vmin;
+  padding: 0 3vmin;
 }
 
 .error-message-count {
   font-weight: 900;
-  margin-bottom: 3vmin;
+  margin: 3vmin;
 }
 
 .user-registration-flash-message {
   text-align: center;
-  padding: 1vmin;
   font-size: 1.8vmin;
   color: red;
   margin-bottom: 3vmin;
@@ -219,6 +219,8 @@ table {
   height: 5vmin;
   font-size: 2vmin;
   margin-bottom: 0.5vmin;
+  padding-left: 1.5vmin;
+  border-radius: 10px;
 }
 
 .input-default, .first-name, .last-name:focus {
@@ -226,17 +228,20 @@ table {
 }
 
 .identification {
-  width: 15vmin;
+  width: 25%;
   background-color: yellow;
   color: red;
   font-size: 2.5vmin;
   font-weight: 900;
-  margin-bottom: 1vmin;
+  margin-top: 6vmin;
+  margin-bottom: 2vmin;
+  padding: 0.8vmin 0.4vmin;
+  border-radius: 15px;
 }
 
 .identification-text {
   color: white;
-  font-size: 1.8vmin;
+  font-size: 2vmin;
 }
 
 .user-registration-name-wrapper {
@@ -249,6 +254,8 @@ table {
   font-size: 2vmin;
   margin-bottom: 0.5vmin;
   margin-right: 2vmin;
+  padding-left: 1.5vmin;
+  border-radius: 10px;
 }
 
 .last-name {
@@ -256,6 +263,8 @@ table {
   height: 5vmin;
   font-size: 2vmin;
   margin-bottom: 0.5vmin;
+  padding-left: 1.5vmin;
+  border-radius: 10px;
 }
 
 .user-registration-submit-text {

@@ -9,7 +9,7 @@
     <div class="user-infomation">
       <% if user_signed_in? %>
         <div class="grid-6">
-          <%= link_to "#{current_user.nickname}さん", root_path, class: "btn-box1" %>
+          <%= link_to "#{current_user.nickname}さん", edit_user_registration_path, class: "btn-box1" %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-box2" %>
         </div>
       <% else %>

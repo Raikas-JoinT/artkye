@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :messages
   has_many :chats, dependent: :destroy
   has_many :entries, dependent: :destroy
+  has_one_attached :avatar
 
   with_options presence: true do
     validates :nickname
@@ -22,7 +23,7 @@ class User < ApplicationRecord
   end
 
   def self.guest
-    find_or_create_by!(nickname: 'ゲスト', email: 'guest@example.com', avatar: 'https://krwsjapan.conohawing.com/wp-content/uploads/2020/11/no-image.jpg', first_name: '山田', last_name: '太郎', first_name_kana: 'ヤマダ', last_name_kana: 'タロウ') do |user|
+    find_or_create_by!(test_image: 'https://krwsjapan.conohawing.com/wp-content/uploads/2020/11/Screenshot_at_Nov_06_23-58-09-removebg-preview.png', nickname: 'ゲスト', email: 'guest@example.com', first_name: '山田', last_name: '太郎', first_name_kana: 'ヤマダ', last_name_kana: 'タロウ') do |user|
       user.password = SecureRandom.urlsafe_base64
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
     end

@@ -1,112 +1,271 @@
-.login-btn {
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 50px;
+/* -------------ここからリセットCSS------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
-.login-red-btn {
+ol, ul, li {
+  list-style: none;
+  margin-bottom: 1.5vmin;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* -------------ここまでリセットCSS------------- */
+
+.user-session-wrapper {
   width: 100%;
+  height: 100vh;
+  // background-color: white;
+}
+
+/* -------------タイトルエリア------------- */
+
+.user-session-title-wrapper {
+  width: 100%;
+  height: 20vh;
+  // background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-session-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.user-session-title {
+  font-size: 5vmin;
+  font-weight: 900;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* -------------タイトルエリア------------- */
+
+/* -------------入力フォームエリア------------- */
+
+.user-session-form-wrapper {
+  width: 100%;
+  height: calc(100% - 20vh - 20vh);
+  // background-color: burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-session-form-container {
+  width: 40%;
+  height: 100%;
+  // background-color: darkviolet;
+}
+
+.user-session-input-area {
+  width: 100%;
+  height: calc(100% - 20%);
+  // background-color: deepskyblue;
+  overflow: scroll;
+  // border: 1px solid #00FF99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.test {
+  width: 100%;
+  height: 50%;
+  // background-color: lightsalmon;;
+}
+
+.session-input-default {
+  width: 100%;
+  height: 6vmin;
+  font-size: 2vmin;
+  margin-bottom: 5vmin;
+  padding-left: 1.5vmin;
+  border-radius: 10px;
+  outline:0;
+}
+
+.error-message-count {
+  font-weight: 900;
+  margin: 3vmin;
+}
+
+.user-session-flash-message {
+  text-align: center;
+  font-size: 1.8vmin;
+  color: red;
+  margin-bottom: 3vmin;
+}
+
+.user-session-input-form {
+  margin-bottom: 3vmin;
+}
+
+.user-session-induction-text {
+  margin-bottom: 1vmin;
+}
+
+
+
+
+/* -------------入力フォームエリア------------- */
+
+/* -------------送信ボタンエリア------------- */
+
+.user-session-submit-area {
+  width: 100%;
+  height: 20%;
+  // background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.user-session-btn {
+  padding: 0.1vmin 10vmin;
+  font-size: 3vmin;
+  color: white;
   background: #ea352d;
   border: 1px solid #ea352d;
-  color: #fff;
-  line-height: 48px;
-  font-size: 14px;
+  font-weight: 900;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0.6vmin 0.6vmin #8b0000;
-  opacity: 0.8;
+  opacity: 1;
 }
 
-.login-red-btn:active {
+.user-session-btn:active {
   box-shadow: none;
   position: relative;
   top: 0.6vmin;
   left: 0.6vmin;
 }
 
-.login-red-btn:focus {
-	outline:0;
+.user-session-btn:focus {
+  outline:0;
 }
 
-.login-red-btn:hover {
-  opacity: 1;
+.user-session-btn:hover {
+  opacity: 0.8;
   background-color:#ea352d;
   cursor:pointer
 }
 
-.login-flash-message {
-  text-align: center;
-  color: red;
-}
 
-.new-user-link {
-  margin-top: 1vmin;
-}
+/* -------------送信ボタンエリア------------- */
 
-/* .new-user {
-  color:#03a9f4;
-} */
+/* -------------ボトムエリア------------- */
 
-.new-user{
-  font-weight: 900;
-  position: relative;
-  display: inline-block;
-  transition: .3s;
-  color: white;
-  text-decoration: none;
-  opacity: 0.7;
-}
-
-.new-user::after {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  content: '';
-  width: 0;
-  height: 2px;
-  background-color: red;
-  transition: .3s;
-  transform: translateX(-50%);
-}
-
-.new-user:hover::after{
+.user-session-bottom-wrapper {
   width: 100%;
+  height: 20vh;
+  // background-color: darkseagreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.new-user:hover {
-  opacity: 1;
-}
-
-.guest-user-link {
-  margin-top: 1vmin;
+.user-session-link {
+  width: 80%;
+  height: 100%;
+  // background-color: lightsalmon;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .guest-user {
-  font-weight: 900;
-  position: relative;
-  display: inline-block;
-  transition: .3s;
-  color: white;
   text-decoration: none;
-  opacity: 0.7;
+  margin-right: 5vmin;
+  font-size: 2.5vmin;
+	position: relative;
+	padding: 0.1em 0.3em;
+	display: inline-block;
+	transition: .3s;
+	color: white;
 }
-
 .guest-user::after {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  content: '';
-  width: 0;
-  height: 2px;
-  background-color: red;
-  transition: .3s;
-  transform: translateX(-50%);
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	content: '';
+	width: 0;
+	height: 1px;
+	background-color: red;
+	transition: .3s;
+	transform: translateX(-50%);
+}
+.guest-user:hover::after {
+	width: 100%;
 }
 
-.guest-user:hover::after{
-  width: 100%;
+.new-user {
+  text-decoration: none;
+  font-size: 2.5vmin;
+  color: white;
+	position: relative;
+	padding: 0.1em 0.3em;
+	display: inline-block;
+	transition: .3s;
 }
-
-.guest-user:hover {
-  opacity: 1;
+.new-user::after {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	content: '';
+	width: 0;
+	height: 1px;
+	background-color: red;
+	transition: .3s;
+	transform: translateX(-50%);
 }
+.new-user:hover::after {
+	width: 100%;
+}
+/* -------------ボトムエリア------------- */
