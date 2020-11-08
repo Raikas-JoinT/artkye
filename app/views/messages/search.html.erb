@@ -34,8 +34,25 @@
         <div class="bottom-area">
           <div class="border-area-left">
             <p class="user-name">
-              <%= link_to "#{result.user.nickname}", user_path(result.user_id) %>
-              <span>さんの投稿</span>
+              <% if result.user.test_image %>
+                <%= link_to edit_user_registration_path do %>
+                <%= image_tag result.user.test_image, class: 'message-user-avatar-image' %>
+                <% end %>
+                <%= link_to "#{result.user.nickname}", edit_user_registration_path %>
+                <span>さんの投稿</span>
+              <% elsif current_user.id == result.user_id %>
+                <%= link_to edit_user_registration_path do %>
+                  <%= image_tag result.user.avatar, class: 'message-user-avatar-image' %>
+                <% end %>
+                <%= link_to "#{result.user.nickname}", edit_user_registration_path %>
+                <span>さんの投稿</span>
+              <% else %>
+              　 <%= link_to user_path(result.user_id) do %>
+                  <%= image_tag result.user.avatar, class: 'message-user-avatar-image' %>
+                <% end %>
+                <%= link_to "#{result.user.nickname}", user_path(result.user_id) %>
+                <span>さんの投稿</span>
+              <% end %>
             </p>
           </div>
           <div class="border-area-right">

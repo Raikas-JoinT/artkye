@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: "affiliates#index"
   resources :affiliates, only: [:index, :show, :create]
   resources :messages, only: [:index, :create]
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update, :create]
   resources :rooms, only: [:create,:show]
   resources :chats, only: [:create]
   get 'messages/search', to: 'messages#search'

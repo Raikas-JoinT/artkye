@@ -1,0 +1,191 @@
+/* -------------ここからリセットCSS------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* -------------ここまでリセットCSS------------- */
+
+/* -------------showページ------------- */
+
+.show-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+.top-wrapper {
+  display: flex;
+}
+
+.page-title {
+  width: 100%;
+  height: 10vh;
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-container {
+  width: 100%;
+  height: calc(100% - 10vh);
+}
+
+.page-title h2 {
+  font-size: 4vmax;
+  color: white;
+  margin-bottom: 1vmin;
+  font-weight: 900;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.top-left {
+  width: calc(100% - 50%);
+  height: calc(100vh - 50vh - 7.5vh);
+  /* background-color: red; */
+}
+
+.top-right {
+  width: calc(100% - 50%);
+  height: calc(100vh - 50vh - 7.5vh);
+  /* background-color: blue; */
+}
+
+.bottom-wrapper {
+  display: flex;
+}
+
+.bottom-left {
+  width: calc(100% - 50%);
+  height: calc(100vh - 50vh - 7.5vh);
+  /* background-color: yellow; */
+}
+
+.bottom-right {
+  width: calc(100% - 50%);
+  height: calc(100vh - 50vh - 7.5vh);
+  /* background-color: green; */
+}
+
+.scraping-info {
+  width: 100%;
+  height: calc(100vh - 50vh - 5vh);
+  /* background-color: black; */
+}
+
+.scraping-info-top {
+  width: 100%;
+  height: 5vh;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scraping-info-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scraping-info-title h2 {
+  font-size: 2vmax;
+  /* border: 1px solid white; */
+  padding: 0.5vmin 1vmin;
+  color: white;
+  margin-bottom: 1vmin;
+  font-weight: 900;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.scraping-info-bottom {
+  width: 100%;
+  height: calc(100vh - 50vh - 5vh - 5vh);
+  /* background-color: white; */
+  /* border: 1px solid white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scraping-info-bottom-flame {
+  width: 100%;
+  height: calc(100vh - 50vh - 5vh - 5vh);
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+
+.scraping-info-bottom-flame h3 {
+  color: white;
+  padding: 3%;
+  /* border: 1px solid white; */
+  font-size: 1vmax;
+}
+
+.site-titles {
+  /* text-decoration: none; */
+  color: #03a9f4;
+}
+
+.list {
+  padding-bottom: 4px;
+}
+
+.site-titles:hover {
+  opacity: 0.7;
+  color: red;
+}
+
+/* -------------showページ------------- */
