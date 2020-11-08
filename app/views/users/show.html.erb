@@ -7,10 +7,10 @@
 <%= render partial: "follow", locals: {controller: :users, action: :follow_list,user_id: @user.id} %>
 
 <% if current_user.id == @user.id %>
-  <%= @user.follow_count %>
-    <%= link_to "人のフォロー", {controller: :users, action: :follow_list,user_id: @user.id}, method: :get %>
-  <%= @user.followers_count %>
-    <%= link_to "人のフォロワー", {controller: :users, action: :follower_list,user_id: @user.id}, method: :get %>
+  <%= link_to @user.follow_count, {controller: :users, action: :follow_list,user_id: @user.id}, method: :get, class: 'user-follow-count' %>
+  <span class="follow-count-text">人のフォロー</span>
+  <%= link_to @user.followers_count, {controller: :users, action: :follower_list,user_id: @user.id}, method: :get, class: 'user-follow-count' %>
+  <span class="follow-count-text">人のフォロワー</span>
 <% end %>
 
 <% unless @user.id == current_user.id %>
