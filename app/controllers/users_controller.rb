@@ -5,18 +5,23 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if current_user.id == @user.id
-      if @user.update(user_params)
-        flash[:success] = 'ユーザー情報を編集しました。'
-        render users_path
-      else
-        flash.now[:danger] = 'ユーザー情報の編集に失敗しました。'
-        render :edit
-      end
+    if current_user.update(user_params)
+      redirect_to root_path
     else
-        redirect_to root_path
+      render :edit
     end
+    # @user = User.find(params[:id])
+    # if current_user.id == @user.id
+    #   if @user.update(user_params)
+    #     flash[:success] = 'ユーザー情報を編集しました。'
+    #     render users_path
+    #   else
+    #     flash.now[:danger] = 'ユーザー情報の編集に失敗しました。'
+    #     render :edit
+    #   end
+    # else
+    #     redirect_to root_path
+    # end
   end
 
   def create
@@ -67,6 +72,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:image, :nickname, :email, :password, :password_confirmation, :avatar, :first_name, :last_name, :first_name_kana, :last_name_kana)
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :avatar, :first_name, :last_name, :first_name_kana, :last_name_kana)
   end
 end
