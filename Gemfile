@@ -69,6 +69,7 @@ gem 'google-api-client'
 gem 'jquery-rails'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+gem 'carrierwave'
 
 group :production do
   # gem 'rails_12factor'
@@ -78,3 +79,4 @@ end
 gem 'ransack'
 gem "aws-sdk-s3", require: false
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+gem 'font-awesome-rails'
