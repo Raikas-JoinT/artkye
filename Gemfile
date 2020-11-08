@@ -69,7 +69,6 @@ gem 'google-api-client'
 gem 'jquery-rails'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
-gem 'carrierwave'
 
 group :production do
   # gem 'rails_12factor'
