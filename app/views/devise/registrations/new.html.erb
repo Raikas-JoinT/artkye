@@ -1,5 +1,7 @@
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+
   <div class="user-registration-wrapper">
+
     <div class="user-registration-title-wrapper">
       <div class="user-registration-title-container">
         <h2 class="user-registration-title">新規会員登録</h2>
@@ -8,6 +10,7 @@
 
     <div class="user-registration-form-wrapper">
       <div class="user-registration-form-container">
+
         <div class="user-registration-avatar-area">
           <div class="user-registration-avatar">
             <div class="user-registration-avatar-icon" id="image-list">
@@ -19,6 +22,7 @@
             </label>
           </div>
         </div>
+
         <div class="user-registration-input-area">
           <div class='user-registration-flash-message'>
             <%= devise_error_messages! %>
@@ -92,6 +96,55 @@
           </div>
 
           <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">郵便番号</label>
+              <span class="mandatory">(必須)</span>
+            </div>
+            <%= f.text_field :postal_code, class:"input-default", id:"postal_code", placeholder:"例）123-4567", maxlength:"8" %>
+          </div>
+
+
+          <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">都道府県</label>
+              <span class="mandatory">(必須)</span>
+            </div>
+            <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, {required: true} %>
+          </div>
+
+          <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">市区町村</label>
+              <span class="mandatory">(必須)</span>
+            </div>
+            <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）大阪市天王寺区", maxlength:"8" %>
+          </div>
+
+          <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">番地</label>
+              <span class="mandatory">(必須)</span>
+            </div>
+            <%= f.text_field :address, class:"input-default", id:"address", placeholder:"例）四天王寺1-1-1" %>
+          </div>
+
+          <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">建物名</label>
+              <span class="form-any">(任意)</span>
+            </div>
+            <%= f.text_field :building, class:"input-default", id:"building", placeholder:"例）天王寺ビル123" %>
+          </div>
+
+          <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">電話番号</label>
+              <span class="mandatory">(必須)</span>
+            </div>
+            <%= f.text_field :phone_number, class:"input-default", id:"phone_number", placeholder:"09012345678", maxlength:"11" %>
+          </div>
+
+          <div class="user-registration-input-form">
             <div class="user-registration-submit-text">
               <div class="final-confirmation">
                 <h2 class='form-bottom-text'>
@@ -101,23 +154,18 @@
               </div>
             </div>
           </div>
-
-          <%# <div class="user-registration-input-form">
-            <div class="user-registration-induction-text">
-              <label class="induction-text"></label>
-              <span class="mandatory">(必須)</span>
-            </div>
-          </div> %>
-
         </div>
 
         <div class="user-registration-submit-area">
           <%= f.submit "会員登録" ,class:"user-registration-btn" %>
         </div>
+
       </div>
     </div>
 
     <div class="user-registration-bottom-wrapper">
     </div>
+
   </div>
+
 <% end %>

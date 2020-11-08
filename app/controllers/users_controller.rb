@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to root_path
     else
-      render :edit
+      render user_registration_path
     end
     # @user = User.find(params[:id])
     # if current_user.id == @user.id
@@ -25,9 +25,16 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to root_path
+    else
+      render 
+    end
   end
 
   def show
+    @follow = Follow.find(params[:id])
     @user = User.find(params[:id])
     @current_user_entry = Entry.where(user_id: current_user.id)
     @user_entry = Entry.where(user_id: @user.id)
@@ -72,6 +79,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :avatar, :first_name, :last_name, :first_name_kana, :last_name_kana)
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :avatar, :first_name, :last_name, :first_name_kana, :last_name_kana, :postal_code, :prefecture_id, :city, :address, :building, :phone_number)
   end
 end

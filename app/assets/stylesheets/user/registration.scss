@@ -136,6 +136,7 @@ table {
 .avatar-icon {
   width: 15vmin;
   height: 15vmin;
+  border-radius: 50%;
   margin-bottom: 1vmin;
 }
 
@@ -214,6 +215,11 @@ table {
   font-weight: 900;
 }
 
+.form-any {
+  color: lightgray;
+  font-size: 1.5vmin;
+}
+
 .input-default {
   width: 60%;
   height: 5vmin;
@@ -233,7 +239,7 @@ table {
   color: red;
   font-size: 2.5vmin;
   font-weight: 900;
-  margin-top: 6vmin;
+  margin-top: 10vmin;
   margin-bottom: 2vmin;
   padding: 0.8vmin 0.4vmin;
   border-radius: 15px;
@@ -242,6 +248,7 @@ table {
 .identification-text {
   color: white;
   font-size: 2vmin;
+  margin-bottom: 1vmin;
 }
 
 .user-registration-name-wrapper {
