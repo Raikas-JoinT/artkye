@@ -12,7 +12,7 @@ if (document.URL.match( /messages/ )) {
     };
 
     document.getElementById('message_image').addEventListener('change', function(e){
-      const imageContent = document.querySelector('img:not(.message-image)');
+      const imageContent = document.querySelector('img:not(.message-image):not(.message-user-avatar-image)');
       if (imageContent){
         imageContent.remove();
       }

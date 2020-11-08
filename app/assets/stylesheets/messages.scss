@@ -244,8 +244,8 @@ table {
 .message-user-avatar-image {
   margin-top: 0.5vmin;
   margin-right: 2vmin;
-  width:6vmin;
-  height: 6vmin;
+  width: 5vmin;
+  height: 5vmin;
   border-radius: 50%;
 }
 
@@ -293,6 +293,7 @@ table {
   padding: 2vmin 2vmin;
   text-align: center;
   margin-left: 1vmin;
+  margin-right: 2vmin;
   border-radius: 10px;
   opacity: 1;
   background:#48D1CC;
@@ -320,8 +321,8 @@ table {
 
 img {
   padding: 0.5vmin;
-  border:1px solid white;
-  margin-left: 2vmin;
+  border: 1px solid white;
+  // margin-left: 2vmin;
   width: 10vmin;
   object-fit: contain;
 }
