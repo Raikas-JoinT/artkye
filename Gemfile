@@ -80,3 +80,4 @@ gem 'ransack'
 gem "aws-sdk-s3", require: false
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'font-awesome-rails'
+gem 'active_hash'
