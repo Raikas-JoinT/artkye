@@ -114,15 +114,6 @@ table {
   align-items: center;
 }
 
-// .user-registration-avatar-icon {
-//   width: 50%;
-//   height: 90%;
-//   background-color: aqua;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
 .user-registration-avatar {
   width: 80%;
   height: 90%;
@@ -133,11 +124,22 @@ table {
   flex-direction: column;
 }
 
+// .user-registration-avatar-icon {
+//   width: 50%;
+//   height: 90%;
+//   background-color: aqua;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
 .avatar-icon {
   width: 15vmin;
   height: 15vmin;
   border-radius: 50%;
   margin-bottom: 1vmin;
+  border: 1px solid white;
+  padding: 1.2vmin;
 }
 
 .form-avatar-image {

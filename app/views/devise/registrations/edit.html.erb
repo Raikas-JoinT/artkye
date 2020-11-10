@@ -2,7 +2,7 @@
   <div class="user-registration-wrapper">
     <div class="user-registration-title-wrapper">
       <div class="user-registration-title-container">
-        <h2 class="user-registration-title">新規会員登録</h2>
+        <h2 class="user-registration-title">プロフィール内容変更</h2>
       </div>
     </div>
 
@@ -11,7 +11,11 @@
         <div class="user-registration-avatar-area">
           <div class="user-registration-avatar">
             <div class="user-registration-avatar-icon" id="image-list">
-              <%= image_tag 'https://krwsjapan.conohawing.com/wp-content/uploads/2020/11/Screenshot_at_Nov_06_23-58-09-removebg-preview.png', class: 'avatar-icon' %>
+              <% if user_signed_in? && @user.test_image %>
+                <%= image_tag @user.test_image, class: 'avatar-icon' %>
+              <% else %>
+                <%= image_tag @user.avatar, class: 'avatar-icon' %>
+              <% end %>
             </div>
             <label class="form-avatar-image">
               <span class="avatar-image">プロフィール画像を選択</span>
@@ -68,7 +72,7 @@
         </div>
 
         <div class="user-registration-submit-area">
-          <%= f.submit "会員登録" ,class:"user-registration-btn" %>
+          <%= f.submit "内容を更新" ,class:"user-registration-btn" %>
         </div>
       </div>
     </div>
