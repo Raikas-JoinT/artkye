@@ -1,29 +1,66 @@
-  <% if user_signed_in? && @user.test_image %>
-    <%= image_tag @user.test_image %>
-  <% else %>
-    <%= image_tag @user.avatar %>
-  <% end %>
+<div class="user-profile-wrapper">
+  <div class="user-profile-title-wrapper">
+    <h2 class="user-profile-title"><%= "ユーザー情報詳細" %></h2>
+  </div>
 
-<%= render partial: "follow", locals: {controller: :users, action: :follow_list,user_id: @user.id} %>
+  <div class="user-profile-other-wrapper">
+    <div class="user-profile-other-left">
+      <h3 class="user-profile-nickname"><%= "#{@user.nickname}" %></h3>
+    </div>
+    <div class="user-profile-other-right">
+    </div>
+  </div>
 
-<% if current_user.id == @user.id %>
-  <%= link_to @user.follow_count, {controller: :users, action: :follow_list,user_id: @user.id}, method: :get, class: 'user-follow-count' %>
-  <span class="follow-count-text">人のフォロー</span>
-  <%= link_to @user.followers_count, {controller: :users, action: :follower_list,user_id: @user.id}, method: :get, class: 'user-follow-count' %>
-  <span class="follow-count-text">人のフォロワー</span>
-<% end %>
+  <div class="user-profile-container">
+    <div class="user-profile-left">
+      <div class="user-profile-left-top">
+        <div class="user-profile-avatar-area">
+          <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar, class: 'user-profile-avatar' %>
+          <% else %>
+            <%= image_tag "https://krwsjapan.conohawing.com/wp-content/uploads/2020/11/Screenshot_at_Nov_06_23-58-09-removebg-preview.png", class: 'user-profile-avatar' %>
+          <% end %>
+        </div>
+        <div class="user-profile-action-area">
+          <div class="user-profile-action-box">
+            <% if current_user.id == @user.id %>
+              <%= link_to "プロフィールを修正する", edit_user_registration_path, class: "user-profile-action-btn" %>
+            <% elsif current_user.following? @user %>
+              <%= link_to "フォローを解除する", {controller: :users,action: :unfollow,user_id: @user.id}, method: :put, class: "user-profile-action-btn2" %>
+            <% else %>
+              <%= link_to "フォローする", {controller: :users,action: :follow,user_id: @user.id}, method: :put , class: "user-profile-action-btn1" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="user-profile-follow-area">
+            <%= link_to @user.follow_count, {controller: :users, action: :follow_list,user_id: @user.id}, method: :get, class: 'user-follow-count' %>
+            <span class="follow-count-text">人のフォロー</span><br/>
+            <%= link_to @user.followers_count, {controller: :users, action: :follower_list,user_id: @user.id}, method: :get, class: 'user-follow-count' %>
+            <span class="follower-count-text">人のフォロワー</span>
+        </div>
+      </div>
 
-<% unless @user.id == current_user.id %>
-  <% if (current_user.followed_by? @user) && (@user.followed_by? current_user)  %>
-    <% if @is_room == true %>
-      <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg">チャットへ</a>
-    <% else %>
-      <%= form_for @room do |f| %>
-        <%= fields_for @entry do |e| %>
-          <%= e.hidden_field :user_id, value: @user.id %>
-        <% end %>
-        <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat" %>
-      <% end %>
-    <% end %>
-  <% end %>
-<% end %>
+      <div class="user-profile-left-bottom">
+        <div class="user-profile-chat-area">
+          <% unless @user.id == current_user.id %>
+            <% if (current_user.followed_by? @user) && (@user.followed_by? current_user)  %>
+              <% if @is_room == true %>
+                <%= link_to "チャットへ", room_path, class: "user-profile-chat-btn" %>
+              <% else %>
+                <%= form_for @room do |f| %>
+                  <%= fields_for @entry do |e| %>
+                    <%= e.hidden_field :user_id, value: @user.id %>
+                  <% end %>
+                  <%= f.submit "チャットを始める", class:"user-profile-chat-btn" %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-profile-right">
+    </div>
+  </div>
+</div>

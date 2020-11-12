@@ -52,15 +52,243 @@ table {
 
 /* -------------ここまでリセットCSS------------- */
 
-.user-follow-count {
-  text-decoration: none;
-  font-size: 5vmin;
+.user-profile-wrapper {
+	width: 100%;
+	height: 100vh;
+	background-color: white;
+}
+
+.user-profile-title-wrapper {
+	width: 100%;
+	height: 50px;
+	background-color: lightsalmon;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 5vmin;
   font-weight: 900;
   font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
   color: #DA8E00;
   background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+
+.user-profile-other-wrapper {
+	width: 100%;
+	height: 40px;
+	background-color: mistyrose;
+	display: flex;
+}
+
+.user-profile-other-left {
+	width: 40%;
+	height: 100%;
+	background-color: olive;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.user-profile-nickname {
+	font-size: 20px;
+  font-weight: 900;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.user-profile-other-right {
+	width: calc(100% - 40%);
+	height: 100%;
+	background-color: red;
+}
+
+
+.user-profile-container {
+	width: 100%;
+	height: calc(100% - 50px - 40px - 5vh);
+	background-color: maroon;
+	display: flex;
+}
+
+.user-profile-left {
+	width: 40%;
+	height: 100%;
+	background-color: palegreen;
+}
+
+.user-profile-left-top {
+	width: 100%;
+	height: 60%;
+	background-color: chocolate;
+}
+
+.user-profile-avatar-area {
+	width: 100%;
+	height: calc(100% - 18% - 12%);
+	background-color: deepskyblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.user-profile-avatar {
+	width: 25vh;
+	height: 25vh;
+	padding: 1.5vmin;
+	border: 1px solid white;
+	object-fit:cover;
+	border-radius:50%;
+}
+
+.user-profile-action-area {
+	width: 100%;
+	height: 18%;
+	background-color: mediumpurple;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.user-profile-action-btn {
+	font-size: 3vmin;
+	color: white;
+	text-decoration: none;
+	font-weight: 900;
+}
+
+.user-profile-action-box {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
+}
+
+.user-profile-action-btn:hover {
+	opacity: 0.7;
+}
+
+.user-profile-action-btn1 {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+  font-size: 2vmin;
+  color: #00FF99;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  border: 0.3vmin solid #00FF99;
+  transition: .4s;
+  padding: 1vmin 2vmin;
+  margin-right: 1vmin;
+}
+
+.user-profile-action-btn1:hover {
+  border: 2px solid transparent;
+  color: #FFF;
+}
+
+.user-profile-action-btn1:before, .user-profile-action-btn1:after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  transform: scale(0);
+  transition: .2s;
+}
+
+.user-profile-action-btn1:before {
+  border-bottom: 0.3vmin solid #FFF;
+  border-left: 0.3vmin solid #FFF;
+  transform-origin: 100% 0%;
+}
+
+.user-profile-action-btn1:after {
+  border-top: 0.3vmin solid #FFF;
+  border-right: 0.3vmin solid #FFF;
+  transform-origin: 0% 100%;
+}
+
+.user-profile-action-btn1:hover:after,
+.user-profile-action-btn1:hover:before {
+  transform: scale(1);
+}
+
+.user-profile-action-btn2 {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+  font-size: 2vmin;
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  border: 0.3vmin solid red;
+  transition: .4s;
+  padding: 1vmin 2vmin;
+  margin-right: 1vmin;
+}
+
+.user-profile-action-btn2:hover {
+  border: 2px solid transparent;
+  color: #FFF;
+}
+
+.user-profile-action-btn2:before, .user-profile-action-btn2:after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  transform: scale(0);
+  transition: .2s;
+}
+
+.user-profile-action-btn2:before {
+  border-bottom: 0.3vmin solid #FFF;
+  border-left: 0.3vmin solid #FFF;
+  transform-origin: 100% 0%;
+}
+
+.user-profile-action-btn2:after {
+  border-top: 0.3vmin solid #FFF;
+  border-right: 0.3vmin solid #FFF;
+  transform-origin: 0% 100%;
+}
+
+.user-profile-action-btn2:hover:after,
+.user-profile-action-btn2:hover:before {
+  transform: scale(1);
+}
+
+.user-profile-follow-area {
+	width: 100%;
+	height: 12%;
+	background-color: gray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.user-follow-count {
+  text-decoration: none;
+  font-size: 4vmin;
+  font-weight: 900;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .user-follow-count:hover {
@@ -68,5 +296,64 @@ table {
 }
 
 .follow-count-text {
-  color: white;
+	padding-right: 2vmin;
+}
+
+.follow-count-text, .follower-count-text {
+	color: white;
+	font-size: 1vmin;
+	padding-left: 1vmin;
+}
+
+.user-profile-left-bottom {
+	width: 100%;
+	height: calc(100% - 60%);
+	background-color: deeppink;
+}
+
+.user-profile-chat-area {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.user-profile-chat-btn {
+	color: black;
+	text-decoration: white;
+	font-size: 3vmin;
+	padding: 2vmin 4vmin;
+	border: 1px solid black;
+	border-radius: 15px;
+	background-color: white;
+	box-shadow: 0.5vmin 0.5vmin #444444;
+}
+
+.user-profile-chat-btn:hover {
+	border: 1px solid white;
+	background-color: springgreen;
+	color: white;
+	transition: .3s;
+	font-weight: 900;
+	box-shadow: 0.5vmin 0.5vmin #004400;
+	cursor: pointer;
+}
+
+.user-profile-chat-btn:active {
+	box-shadow: none;
+  position: relative;
+  top: 0.5vmin;
+  left: 0.5vmin;
+}
+
+.user-profile-chat-btn:focus {
+	outline:0;
+}
+
+.user-profile-right {
+	width: calc(100% - 40%);
+	height: 100%;
+	background-color: yellow;
+	overflow: scroll;
 }

@@ -29,12 +29,11 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path
     else
-      render 
+      render
     end
   end
 
   def show
-    @follow = Follow.find(params[:id])
     @user = User.find(params[:id])
     @current_user_entry = Entry.where(user_id: current_user.id)
     @user_entry = Entry.where(user_id: @user.id)

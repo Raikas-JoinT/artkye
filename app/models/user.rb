@@ -31,8 +31,7 @@ class User < ApplicationRecord
   end
 
   def self.guest
-    find_or_create_by!(test_image: 'https://krwsjapan.conohawing.com/wp-content/uploads/2020/11/Screenshot_at_Nov_06_23-58-09-removebg-preview.png', nickname: 'ゲスト', email: 'guest@example.com', first_name: '山田', last_name: '太郎', first_name_kana: 'ヤマダ', last_name_kana: 'タロウ', postal_code: '123-4567', prefecture_id: '27', city: '大阪市', address: '天王寺区', phone_number: '09012345678') do |user|
-      user.password = SecureRandom.urlsafe_base64
+    find_by(nickname: 'ゲスト', email: 'guest@example.com') do |user|
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
     end
   end

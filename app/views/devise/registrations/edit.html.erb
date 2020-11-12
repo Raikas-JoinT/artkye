@@ -11,10 +11,10 @@
         <div class="user-registration-avatar-area">
           <div class="user-registration-avatar">
             <div class="user-registration-avatar-icon" id="image-list">
-              <% if user_signed_in? && @user.test_image %>
-                <%= image_tag @user.test_image, class: 'avatar-icon' %>
-              <% else %>
+              <% if current_user.id == @user.id && @user.avatar.attached? %>
                 <%= image_tag @user.avatar, class: 'avatar-icon' %>
+              <% else %>
+                <%= image_tag "https://krwsjapan.conohawing.com/wp-content/uploads/2020/11/Screenshot_at_Nov_06_23-58-09-removebg-preview.png", class: 'avatar-icon' %>
               <% end %>
             </div>
             <label class="form-avatar-image">
