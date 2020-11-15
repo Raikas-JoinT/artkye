@@ -34,22 +34,19 @@
         <div class="bottom-area">
           <div class="border-area-left">
             <p class="user-name">
-              <% if result.user.test_image %>
-                <%= link_to edit_user_registration_path do %>
-                <%= image_tag result.user.test_image, class: 'message-user-avatar-image' %>
-                <% end %>
-                <%= link_to "#{result.user.nickname}", edit_user_registration_path %>
-                <span>さんの投稿</span>
-              <% elsif current_user.id == result.user_id %>
-                <%= link_to edit_user_registration_path do %>
+              <% if result.user.avatar.attached? %>
+                <%= link_to user_path(result.user_id) do %>
                   <%= image_tag result.user.avatar, class: 'message-user-avatar-image' %>
                 <% end %>
-                <%= link_to "#{result.user.nickname}", edit_user_registration_path %>
-                <span>さんの投稿</span>
               <% else %>
-              　 <%= link_to user_path(result.user_id) do %>
-                  <%= image_tag result.user.avatar, class: 'message-user-avatar-image' %>
+                <%= link_to user_path(result.user_id) do %>
+                  <%= image_tag "https://krwsjapan.conohawing.com/wp-content/uploads/2020/11/Screenshot_at_Nov_06_23-58-09-removebg-preview.png", class: 'message-user-avatar-image' %>
                 <% end %>
+              <% end %>
+              <% if current_user.id == result.user_id %>
+                <%= link_to "あなた", user_path(result.user_id) %>
+                <span>の投稿</span>
+              <% else %>
                 <%= link_to "#{result.user.nickname}", user_path(result.user_id) %>
                 <span>さんの投稿</span>
               <% end %>
