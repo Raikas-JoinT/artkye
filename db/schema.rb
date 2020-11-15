@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2020_10_20_081730) do
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.text "profile_text"
+    t.string "profile_text"
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
     t.string "first_name_kana", default: "", null: false
