@@ -6,9 +6,11 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
+      flash[:success] = 'ユーザー情報を編集しました。'
       redirect_to root_path
     else
-      render user_registration_path
+      flash.now[:danger] = 'ユーザー情報の編集に失敗しました。'
+      redirect_to edit_user_registration_path
     end
     # @user = User.find(params[:id])
     # if current_user.id == @user.id
@@ -78,6 +80,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :avatar, :first_name, :last_name, :first_name_kana, :last_name_kana, :postal_code, :prefecture_id, :city, :address, :building, :phone_number)
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :avatarv, :profile_text, :first_name, :last_name, :first_name_kana, :last_name_kana, :postal_code, :prefecture_id, :city, :address, :building, :phone_number)
   end
 end

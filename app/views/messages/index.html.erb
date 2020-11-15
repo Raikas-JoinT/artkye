@@ -65,7 +65,7 @@
   <div class="text-form-area">
     <%= form_with model: @message, id: 'new_message', local: true do |form| %>
       <div class="text-form-top">
-        <%= form.text_area :message, placeholder: "メッセージを共有する(※1000文字まで)", class: "text-form", maxlength:"1000" %>
+        <%= form.text_area :message, placeholder: "メッセージ(※1000文字まで)", class: "text-form", maxlength:"1000" %>
         <label class="form-image">
           <span class="image-file">画像</span>
           <%= form.file_field :image, class: 'hidden' %>
