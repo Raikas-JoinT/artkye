@@ -104,6 +104,20 @@ table {
 	width: calc(100% - 40%);
 	height: 100%;
 	background-color: red;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.user-profile-page-link {
+	color: white;
+	font-size: 2vmin;
+	font-weight: 900;
+	text-decoration: none;
+}
+
+.user-profile-page-link:hover {
+	opacity: 0.7;
 }
 
 
@@ -355,5 +369,41 @@ table {
 	width: calc(100% - 40%);
 	height: 100%;
 	background-color: yellow;
+}
+
+.user-profile-right-top {
+	width: 100%;
+	height: 40%;
+	background-color: brown;
+}
+
+.user-profile-text-top {
+	width: 100%;
+	height: 20%;
+	background-color: darkgrey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.user-profile-text-top h3 {
+  font-size: 3vmin;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.user-profile-text-bottom {
+	width: 100%;
+	height: calc(100% - 20%);
+	background-color: darkorange;
+}
+
+.user-profile-right-bottom {
+	width: 100%;
+	height: calc(100% - 40%);
+	background-color: chartreuse;
 	overflow: scroll;
 }

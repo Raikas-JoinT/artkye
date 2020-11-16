@@ -46,14 +46,6 @@
 
           <div class="user-registration-input-form">
             <div class="user-registration-induction-text">
-              <label class="induction-text">現在のパスワード</label>
-              <span class="mandatory">(必須)</span>
-            </div>
-            <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字"  %>
-          </div>
-
-          <div class="user-registration-input-form">
-            <div class="user-registration-induction-text">
               <label class="induction-text">新しいパスワード</label>
               <span class="mandatory">(必須)</span>
             </div>
@@ -67,6 +59,14 @@
               <span class="mandatory">(必須)</span>
             </div>
             <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+          </div>
+
+          <div class="user-registration-input-form">
+            <div class="user-registration-induction-text">
+              <label class="induction-text">自己紹介</label>
+              <span class="mandatory">(必須)</span>
+            </div>
+            <%= f.text_area :profile_text, class:"profile-text-input-default", id:"profile_text", placeholder:"自己紹介文(※1000文字まで)", maxlength:"1000" %>
           </div>
 
         </div>

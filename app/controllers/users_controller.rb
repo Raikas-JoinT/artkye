@@ -8,20 +8,8 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to root_path
     else
-      render user_registration_path
+      redirect_to edit_user_registration_path
     end
-    # @user = User.find(params[:id])
-    # if current_user.id == @user.id
-    #   if @user.update(user_params)
-    #     flash[:success] = 'ユーザー情報を編集しました。'
-    #     render users_path
-    #   else
-    #     flash.now[:danger] = 'ユーザー情報の編集に失敗しました。'
-    #     render :edit
-    #   end
-    # else
-    #     redirect_to root_path
-    # end
   end
 
   def create
@@ -29,7 +17,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path
     else
-      render
+      redirect_to edit_user_registration_path
     end
   end
 
@@ -40,7 +28,7 @@ class UsersController < ApplicationController
     unless @user.id == current_user.id
       @current_user_entry.each do |cu|
         @user_entry.each do |u|
-          if cu.room_id == u.room_id then
+          if cu.room_id == u.room_id
             @is_room = true
             @room_id = cu.room_id
           end
@@ -78,6 +66,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :avatar, :first_name, :last_name, :first_name_kana, :last_name_kana, :postal_code, :prefecture_id, :city, :address, :building, :phone_number)
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :avatar, :profile_text, :first_name, :last_name, :first_name_kana, :last_name_kana, :postal_code, :prefecture_id, :city, :address, :building, :phone_number)
   end
 end

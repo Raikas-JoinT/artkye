@@ -8,6 +8,8 @@
       <h3 class="user-profile-nickname"><%= "#{@user.nickname}" %></h3>
     </div>
     <div class="user-profile-other-right">
+      <%= link_to "トップページ", root_path, class: "user-profile-page-link" %>
+      <%= link_to "情報共有広場", messages_path, class: "user-profile-page-link" %>
     </div>
   </div>
 
@@ -61,6 +63,15 @@
     </div>
 
     <div class="user-profile-right">
+      <div class="user-profile-right-top">
+        <div class="user-profile-text-top">
+          <h3>自己紹介</h3>
+        </div>
+        <div class="user-profile-text-bottom">
+        </div>
+      </div>
+      <div class="user-profile-right-bottom">
+      </div>
     </div>
   </div>
 </div>
