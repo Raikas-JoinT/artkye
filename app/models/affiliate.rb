@@ -4,8 +4,8 @@ require 'json'
 require 'nokogiri'
 require 'open-uri'
 
-API_KEY = 'AIzaSyCvOsevHhyU8mwtISxXHJDK8HHtox7p7u0'
-CSE_ID = '5a2935ef5c576e6b6'
+API_KEY = '****'
+CSE_ID = '****'
 
 def self.affiliate_sites(params)
   searcher = Google::Apis::CustomsearchV1::CustomSearchAPIService.new
