@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def edit
     @user = User.find(params[:id])
   end
@@ -53,7 +52,6 @@ class UsersController < ApplicationController
     current_user.stop_following(@user)
     redirect_to user_path(@user)
   end
-
 
   def follow_list
     @user = User.find(params[:user_id])

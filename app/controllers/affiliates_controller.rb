@@ -7,10 +7,10 @@ class AffiliatesController < ApplicationController
 
   def show
     @affiliate_sites = Affiliate.affiliate_sites(params)
-    @affiliate_titles = @affiliate_sites.map {|affiliate_site| affiliate_site[:title]}
-    @affiliate_links = @affiliate_sites.map {|affiliate_site| affiliate_site[:link]}
-    @affiliate_published_times = @affiliate_sites.map {|affiliate_site| affiliate_site[:published_time]}
-    @affiliate_modified_times = @affiliate_sites.map {|affiliate_site| affiliate_site[:modified_time]}
+    @affiliate_titles = @affiliate_sites.map { |affiliate_site| affiliate_site[:title] }
+    @affiliate_links = @affiliate_sites.map { |affiliate_site| affiliate_site[:link] }
+    @affiliate_published_times = @affiliate_sites.map { |affiliate_site| affiliate_site[:published_time] }
+    @affiliate_modified_times = @affiliate_sites.map { |affiliate_site| affiliate_site[:modified_time] }
     @affiliate_article_tag = Affiliate.article_tag(params)
     @affiliate_article_word_counts = Affiliate.article_word_counts(params)
     # @affiliate_site_info = Affiliate.site_info(params)
@@ -18,8 +18,6 @@ class AffiliatesController < ApplicationController
     # @affiliate_site_titles = Affiliate.site_titles(params)
     # @affiliate_article_tag = Affiliate.article_tag(params)
     # @affiliate_site_word_counts = Affiliate.site_word_counts(params)
-
-
 
     # affiliate = Affiliate.find(params[:id])
     # affiliate = affiliate.keyword
@@ -44,19 +42,16 @@ class AffiliatesController < ApplicationController
 
   def create
     @affiliate = Affiliate.create(affiliate_params)
-    if @affiliate.save
-      redirect_to affiliate_path(@affiliate)
-    end
+    redirect_to affiliate_path(@affiliate) if @affiliate.save
   end
 
   private
+
   def affiliate_params
     params.require(:affiliate).permit(:keyword)
   end
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to new_user_session_path
-    end
+    redirect_to new_user_session_path unless user_signed_in?
   end
 end
