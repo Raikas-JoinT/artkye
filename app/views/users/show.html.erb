@@ -5,7 +5,11 @@
 
   <div class="user-profile-other-wrapper">
     <div class="user-profile-other-left">
-      <h3 class="user-profile-nickname"><%= "#{@user.nickname}" %></h3>
+      <% if current_user.id == @user.id %>
+        <h3 ><%= @user.nickname %></h3><span>(※あなた)</span>
+      <% else %>
+        <h3 ><%= @user.nickname %></h3>
+      <% end %>
     </div>
     <div class="user-profile-other-right">
       <%= link_to "トップページ", root_path, class: "user-profile-page-link" %>
@@ -67,10 +71,77 @@
         <div class="user-profile-text-top">
           <h3>自己紹介</h3>
         </div>
+
         <div class="user-profile-text-bottom">
+          <% if @user.profile_text.present? %>
+            <div class="user-profile-text-area">
+              <p class="user-profile-text"><%= simple_format(@user.profile_text) %></p>
+            </div>
+          <% else %>
+            <div class="user-profile-not-text-area">
+              <%= "未登録" %>
+            </div>
+          <% end %>
         </div>
       </div>
+
       <div class="user-profile-right-bottom">
+        <div class="user-profile-post-top">
+          <% if current_user.id == @user.id %>
+            <h3><%= "あなたの投稿" %></h3>
+          <% else %>
+            <h3><%= "#{@user.nickname}さんの投稿" %></h3>
+          <% end %>
+        </div>
+
+        <div class="user-profile-post-bottom">
+          <% if @user.messages.present? %>
+            <div class="user-profile-post-area">
+              <% @user.messages.each do |message| %>
+                <div class="message-text-area">
+                  <div class="message-text-image">
+                    <div class="user-profile-post-text">
+                      <%= message.message %>
+                    </div>
+                    <% if message.image.attached? %>
+                      <div class="message-image-right">
+                        <%= link_to url_for(message.image), target: :_blank do %>
+                          <%= image_tag message.image, id: 'image', class: 'user-profile-post-image' %>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+
+                <div class="bottom-area">
+                  <div class="border-area-left">
+                    <p class="user-profile-post-name">
+                      <% if message.user.avatar.attached? %>
+                        <%= image_tag message.user.avatar, class: 'user-profile-avatar-image' %>
+                      <% else %>
+                        <%= image_tag "https://krwsjapan.conohawing.com/wp-content/uploads/2020/11/Screenshot_at_Nov_06_23-58-09-removebg-preview.png", class: 'user-profile-avatar-image' %>
+                      <% end %>
+
+                      <% if current_user.id == message.user_id %>
+                        <p><%= "あなたの投稿" %>
+                      <% else %>
+                        <%= "#{message.user.nickname}さんの投稿" %>
+                      <% end %>
+                    </p>
+                  </div>
+
+                  <div class="border-area-right">
+                    <p class="user-profile-post-ceated-at">
+                      <%= l message.created_at %>
+                    </p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% else %>
+            <p class="user-profile-not-post"><%= "未投稿" %></p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

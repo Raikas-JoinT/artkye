@@ -55,13 +55,13 @@ table {
 .user-profile-wrapper {
 	width: 100%;
 	height: 100vh;
-	background-color: white;
+	// background-color: white;
 }
 
 .user-profile-title-wrapper {
 	width: 100%;
 	height: 50px;
-	background-color: lightsalmon;
+	// background-color: lightsalmon;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -77,20 +77,22 @@ table {
 .user-profile-other-wrapper {
 	width: 100%;
 	height: 40px;
-	background-color: mistyrose;
+	// background-color: mistyrose;
 	display: flex;
+	border: 2px solid darkgray;
 }
 
 .user-profile-other-left {
 	width: 40%;
 	height: 100%;
-	background-color: olive;
+	// background-color: olive;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-right: 2px solid darkgray;
 }
 
-.user-profile-nickname {
+.user-profile-other-left h3 {
 	font-size: 20px;
   font-weight: 900;
   font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
@@ -100,50 +102,76 @@ table {
 	-webkit-text-fill-color: transparent;
 }
 
+.user-profile-other-left span {
+	font-size: 12px;
+	color: white;
+	padding-left: 5px;
+}
+
 .user-profile-other-right {
 	width: calc(100% - 40%);
 	height: 100%;
-	background-color: red;
+	// background-color: red;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 }
 
 .user-profile-page-link {
+  text-decoration: none;
+  font-size: 2vmin;
+	position: relative;
+	padding: 0.1em 0.3em;
+	display: inline-block;
+	transition: .3s;
 	color: white;
-	font-size: 2vmin;
-	font-weight: 900;
-	text-decoration: none;
 }
 
 .user-profile-page-link:hover {
 	opacity: 0.7;
 }
 
+.user-profile-page-link::after {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	content: '';
+	width: 0;
+	height: 1px;
+	background-color: red;
+	transition: .3s;
+	transform: translateX(-50%);
+}
+
+.user-profile-page-link:hover::after {
+	width: 100%;
+}
 
 .user-profile-container {
 	width: 100%;
 	height: calc(100% - 50px - 40px - 5vh);
-	background-color: maroon;
+	// background-color: maroon;
 	display: flex;
 }
 
 .user-profile-left {
 	width: 40%;
 	height: 100%;
-	background-color: palegreen;
+	// background-color: white;
 }
 
 .user-profile-left-top {
 	width: 100%;
 	height: 60%;
-	background-color: chocolate;
+	// background-color: chocolate;
+	border-left: 2px solid darkgray;
+	border-right: 2px solid darkgray;
 }
 
 .user-profile-avatar-area {
 	width: 100%;
 	height: calc(100% - 18% - 12%);
-	background-color: deepskyblue;
+	// background-color: cornflowerblue;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -161,7 +189,7 @@ table {
 .user-profile-action-area {
 	width: 100%;
 	height: 18%;
-	background-color: mediumpurple;
+	// background-color: mediumpurple;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
@@ -183,9 +211,36 @@ table {
 	font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
 }
 
+.user-profile-action-btn {
+  text-decoration: none;
+  font-size: 3vmin;
+	position: relative;
+	padding: 0.1em 0.3em;
+	display: inline-block;
+	transition: .3s;
+	color: white;
+}
+
 .user-profile-action-btn:hover {
 	opacity: 0.7;
 }
+
+.user-profile-action-btn::after {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	content: '';
+	width: 0;
+	height: 1px;
+	background-color: red;
+	transition: .3s;
+	transform: translateX(-50%);
+}
+
+.user-profile-action-btn:hover::after {
+	width: 100%;
+}
+
 
 .user-profile-action-btn1 {
 	display: flex;
@@ -288,7 +343,7 @@ table {
 .user-profile-follow-area {
 	width: 100%;
 	height: 12%;
-	background-color: gray;
+	// background-color: gray;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -296,7 +351,7 @@ table {
 
 .user-follow-count {
   text-decoration: none;
-  font-size: 4vmin;
+  font-size: 3vmin;
   font-weight: 900;
   font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
   color: #DA8E00;
@@ -322,7 +377,7 @@ table {
 .user-profile-left-bottom {
 	width: 100%;
 	height: calc(100% - 60%);
-	background-color: deeppink;
+	// background-color: deeppink;
 }
 
 .user-profile-chat-area {
@@ -331,6 +386,7 @@ table {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border: 2px solid darkgray;
 }
 
 .user-profile-chat-btn {
@@ -368,26 +424,26 @@ table {
 .user-profile-right {
 	width: calc(100% - 40%);
 	height: 100%;
-	background-color: yellow;
+	// background-color: yellow;
 }
 
 .user-profile-right-top {
 	width: 100%;
 	height: 40%;
-	background-color: brown;
+	// background-color: brown;
 }
 
 .user-profile-text-top {
 	width: 100%;
 	height: 20%;
-	background-color: darkgrey;
+	// background-color: darkgrey;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .user-profile-text-top h3 {
-  font-size: 3vmin;
+  font-size: 2.5vmin;
   font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
   color: #DA8E00;
   background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
@@ -398,12 +454,125 @@ table {
 .user-profile-text-bottom {
 	width: 100%;
 	height: calc(100% - 20%);
-	background-color: darkorange;
+	// background-color: darkorange;
+	display: flex;
+	justify-content: center;
+}
+
+.user-profile-text-area {
+	color: white;
+	width: 85%;
+	height: 100%;
+	padding: 0 2vmin;
+	// background-color: darkturquoise;
+	border: 1px solid #00FF99;
+	overflow: scroll;
+}
+
+.user-profile-not-text-area {
+	// background-color: darkorange;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 5vmin;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: red;
+}
+
+.user-profile-text-area p {
+	font-size: 2vmin;
+	line-height: 130%;
+	margin-bottom: 1.5vmin;
 }
 
 .user-profile-right-bottom {
 	width: 100%;
 	height: calc(100% - 40%);
-	background-color: chartreuse;
+	// background-color: chartreuse;
+}
+
+.user-profile-post-top {
+width: 100%;
+height: 10%;
+// background-color: fuchsia;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.user-profile-post-top h3 {
+	font-size: 2.5vmin;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.user-profile-post-bottom {
+	width: 100%;
+	height: calc(100% - 10%);
+	// background-color: greenyellow;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.user-profile-post-area {
+	width: 85%;
+	height: 100%;
+	// background-color: seashell;
+	border: 1px solid #00FF99;
 	overflow: scroll;
+	padding: 1vmin;
+}
+
+.user-profile-post-image {
+	padding: 0.4vmin;
+	border: 1px solid black;
+	box-shadow: 0.4vmin 0.4vmin black;
+	margin-right: 1vmin;
+}
+
+.user-profile-post-image:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.4vmin;
+  left: 0.4vmin;
+}
+
+.user-profile-post-image:hover {
+  opacity: 0.6;
+}
+
+.user-profile-post-text {
+  width: 100%;
+  height: 85%;
+  overflow: scroll;
+  font-size: 2vmin;
+  // background-color: #e1ce08;
+}
+
+.user-profile-avatar-image {
+  margin-right: 1vmin;
+  width: 3.5vmin;
+	height: 3.5vmin;
+  border-radius: 50%;
+}
+
+.user-profile-post-name {
+	font-size: 1vmin;
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-profile-post-ceated-at {
+	font-size: 1vmin;
+}
+
+.user-profile-not-post {
+	font-size: 5vmin;
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  color: red;
 }
