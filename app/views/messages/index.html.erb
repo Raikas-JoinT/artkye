@@ -44,10 +44,10 @@
                 <% end %>
               <% end %>
               <% if current_user.id == message.user_id %>
-                <%= link_to "あなた", user_path(message.user_id) %>
+                <%= link_to "あなた", user_path(message.user_id), class: "message-user-name" %>
                 <span>の投稿</span>
               <% else %>
-                <%= link_to "#{message.user.nickname}", user_path(message.user_id) %>
+                <%= link_to "#{message.user.nickname}", user_path(message.user_id), class: "message-user-name" %>
                 <span>さんの投稿</span>
               <% end %>
             </p>
