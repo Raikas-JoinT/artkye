@@ -39,6 +39,8 @@ class UsersController < ApplicationController
         @entry = Entry.new
       end
     end
+    @follow = Follow.find(params[:id])
+    @users = User.all
   end
 
   def follow

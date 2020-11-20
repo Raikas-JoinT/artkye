@@ -62,6 +62,19 @@
               <% end %>
             <% end %>
           <% end %>
+          <% @users.each do |user| %>
+            <div class="test2">
+              <% unless user.id == @follow.followable_id %>
+                <%= user.nickname %>
+              <% end %>
+            </div>
+
+            <div class="test3">
+              <% unless  user.id != @follow.follower_id %>
+                <%= user.nickname %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
